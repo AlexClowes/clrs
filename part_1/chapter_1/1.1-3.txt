@@ -1,0 +1,2 @@
+An array has constant time (i.e. fast) performance when reading or writing a value,
+but takes O(n) time (i.e. slow) if we need to copy the array or insert new elements.

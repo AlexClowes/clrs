@@ -1,0 +1,7 @@
+An approximate solution to the traveling salesman problem is usually fine.
+e.g. if we are plotting a delivery route, then taking a route that is only
+     marginally slower is not a problem.
+
+An exact solution is required for most sorting problems.
+e.g. a dictionary with words in approximately alphabetical order would not be
+     very useful.

@@ -1,0 +1,6 @@
+The shortest-path and traveling salesman problems both require an agent to find
+the shortest route along the edges of a graph subject to some constraint.
+
+The shortest-path problem requires us to start and end at two particular points,
+while the traveling salesman problem requires us to start and end at the same
+point, while visiting certain points along the route.
