@@ -1,0 +1,2 @@
+If a web store is to list products in price order, it must perform a sort on the
+list of prices.

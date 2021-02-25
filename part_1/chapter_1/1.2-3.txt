@@ -1,0 +1,3 @@
+   100n^2 = 2^n
+=> n ~ 14.32
+So for n >= 15, the algorithm with running time 100n^2 is faster.

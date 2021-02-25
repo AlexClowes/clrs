@@ -1,0 +1,4 @@
+   8n^2 = 64nlog2(n)
+=> n = 8log2(n)
+=> n ~ 43.5593
+So for n >= 44, we expect merge sort to be faster.
