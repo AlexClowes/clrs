@@ -1,0 +1,12 @@
+for i = 1 to A.length
+    if A[i] == v
+        return i
+return NIL
+
+The loop invariant is that on each iteration, there is no element of the array
+A[1 .. i - 1] equal to v.
+This is trivially true when i = 1 (v is not an element of the empty array).
+For a new iteration i to begin, we must have not return on line 3, so
+A[i - 1] != v. It follows that A[1 .. i - 1] does not containt v.
+On termination, either we have some i such that A[i] == v or there is no i s.t.
+A[i] == v and we return NIL.
