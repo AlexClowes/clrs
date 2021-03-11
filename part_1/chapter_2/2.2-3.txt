@@ -1,0 +1,5 @@
+For an array with n elements, containing the element we wish to find, we need to
+check, on average, n / 2 elements. So the average case runtime is O(n).
+
+In the worst case, the element is not in the array, and we must iterate over all
+n elements, so the worst case runtime is O(n).

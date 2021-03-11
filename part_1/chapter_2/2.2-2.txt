@@ -1,0 +1,18 @@
+for i = 1 to A.length - 1
+    min_index = A[i]
+    for j = i + 1 to A.length
+        if A[j] < A[min_index]
+            min_index = j
+    temp = A[i]
+    A[i] = A[min_index]
+    A[min_index] = temp
+
+The loop invariant is that at the beginning of iteration i, the elements
+A[1 .. i - 1] are the smallest i - 1 elements of A, sorted in asending order.
+
+After A.length - 1 iterations, the element A[A.length] must be the largest
+element of A, so we don't need any more iterations.
+
+For each iteration i, we perform an iteration over the elements A[i + 1 .. A.length].
+So the initial ordering of the array does not matter, and the best and worst case
+runtimes are both O(n^2).

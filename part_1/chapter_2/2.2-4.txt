@@ -1,0 +1,6 @@
+We can modify almost any algorithm to start by producing a random value that is
+correct for some input, and then check if it is correct for the particular input.
+If it is correct, we can terminate immediately, and if not we continue with the
+original algorithm.
+In the best case, our random guess is correct, so the best case running time will
+be fast.
