@@ -1,0 +1,19 @@
+Assume we have a procedure Sort, which sorts a set of numbers in O(nlog(n)) time.
+Then the following pseudocode will determine whether there exist two elements in
+S whose sum is exactly x.
+
+Sort(S)
+lo = 1
+hi = S.length
+while lo < hi
+    sum = S[lo] + S[hi]
+    if sum == x
+        return True
+    if sum < x
+        // sum is too small, so increase the lower of the two numbers
+        lo = lo + 1
+    else
+        hi = hi - 1
+return False
+
+The code after the sort runs in O(n) time, so the total runtime is O(nlog(n)).

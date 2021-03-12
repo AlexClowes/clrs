@@ -1,0 +1,3 @@
+Even if we can quickly find the point to insert a new element in insertion sort,
+we still need to copy all elements at higher indices to new positions. So binary
+search is no faster than linear search in this case.

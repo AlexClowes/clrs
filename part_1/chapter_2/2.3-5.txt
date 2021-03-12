@@ -1,0 +1,34 @@
+Iterative:
+BinSearch(A, v)
+left = 1
+right = A.length
+while left <= right
+    mid = floor((left + right) / 2)
+    if A[mid] == v
+        return mid
+    else if A[mid] < v
+        left = mid + 1
+    else
+        right = mid - 1
+return NIL
+
+
+Recursive:
+BinSearch(A, left, right, v)
+if left > right
+    return NIL
+mid = floor((left + right) / 2)
+if A[mid] == v
+    return mid
+else if A[mid] < v
+    return BinSearch(A, mid + 1, right, v)
+else
+    return BinSearch(A, left, mid - 1, v)
+
+
+
+In the worst case, the element v is not in the array, and we continue iterating
+until left > right, when the remaining search interval contains no elements. Each
+iteration halves the size of the search interval, so if we begin with an array of
+size n (and hence a search interval of size n), then after lg(n) iterations the
+search interval will be of size 0. So The total runtime is O(log(n)).

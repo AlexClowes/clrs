@@ -1,0 +1,15 @@
+We assume n is a power of two, so set n = 2^k for some positive integer k.
+
+In the case k = 1, we have
+T(2^k) = T(2) = 2 = 2lg(2)
+as required.
+
+Suppose
+T(n) = nlg(n) <=> T(2^k) = k * 2^k
+for some value of k. Then
+T(2^(k+1)) = 2T(2^k) + 2^(k + 1)
+           = 2 * k * 2^k + 2^(k + 1)
+           = (k + 1) * 2^(k + 1)
+
+So by induction, T(2^k) = k * 2^k for all positive integers k, and hence for all
+powers of 2 greater than 1, we have T(n) = nlg(n).
