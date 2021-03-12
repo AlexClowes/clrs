@@ -1,0 +1,25 @@
+a. This fragment has O(n) runtime, assuming we can perform arithmetic in
+   constant time.
+
+b. y = 0
+   for i = 0 to n - 1
+       term = ai
+       for j = 0 to i - 1
+           term = term * x
+       y = y + term
+   
+   The inner loop performs i iterations, and the outer loop performs n iterations.
+   So the total runtime is O(n^2), slower than the O(n) runtime of Horner's rule.
+
+c. Initially, we have i = n => n - (i + 1) = -1 => y = 0, which is trivially true.
+   If at the start of an iteration, we have
+   y = sum_{k=0}^{n - (i + 1)}a_{k + i + 1}x^k
+   the at the end of the iteration we have
+   y = a_i + x * y
+     = sum_{k=0}^{n - i}a_{k + i}x^k
+   so the loop invariant is maintained.
+   At termination, we have i = 0 and hence
+   y = sum_{k=0}^{n}a_k * x^k = P(x)
+   as required.
+
+d. See c.

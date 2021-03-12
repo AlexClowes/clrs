@@ -1,0 +1,7 @@
+a. (1, 5), (2, 5), (3, 4), (3, 5), (4, 5)
+
+b. The array [n, n - 1, ..., 1] has the most inversions. It has
+   (n - 1) + (n - 2) + ... + 1 = n * (n - 1) / 2 inversions.
+
+c. The runtime of insertion sort is directly proportional to the number of
+   inversions. 

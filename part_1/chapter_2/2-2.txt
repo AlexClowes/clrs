@@ -1,0 +1,31 @@
+a. We need to prove that the elements of A are the same as the elements of A',
+   up to permutations.
+
+b. The loop invariant for the for loop in lines 2-4 is that the smallest element
+   of the subarray A[i .. A.length] is at index at most j.
+   This is trivially true initially, when j = A.length.
+   At the start of an iteration, the smallest element is at an index k. If k < j,
+   then k <= j - 1 and the smallest element will have index at most j - 1 by the
+   end of the iteration. If k = j, then A[j] < A[j - 1] by definition, and the
+   iteration will move the minimal element to A[j - 1]. So the loop invariant is
+   maintained.
+   On termination, the smallest element of the subarray A[i .. A.length] is at
+   index i.
+
+c. The loop invariant for the for loop in lines 1-4 is that the subarray
+   A[1 .. i - 1] is the i - 1 smallest elements of A in ascending order.
+   Initially, this is trivially true. When i = 1, the subarray A[1 .. i - 1] is
+   empty.
+   After each iteration, the smallest element of A[i .. A.length] is moved to
+   index i, and the subarray A[1 .. i - 1] is not altered. A[1 .. i - 1] is the
+   smallest i - 1 elements of A, so it follows that A[k] <= A[i] for k = 1 .. i - 1,
+   and so at the end of the iteration the subarray A[1 .. i] contains the i smallest
+   elements in ascending order.
+   After the final iteration, we have the A.length - 1 smallest elements in ascending
+   order in the subarray A[1 .. A.length - 1]. This leaves only the largest element
+   at index A.length, so the entire array is sorted.
+
+d. Each iteration of the outer loop will cause A.length - i iterations of the
+   inner loop. Each iteration of the inner loop runs in constant time, so the
+   total worst-case runtime is O(n^2).
+   This is the same as the worst-case runtime of insertion sort.

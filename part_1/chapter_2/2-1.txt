@@ -1,0 +1,17 @@
+a. Each sublist has k elements, so there exists some constant c for which a single
+   sublist is sorted in ck^2 time. There are n/k sublists, so the total sorting
+   time is then ck^2 * (n / k) = cnk.
+   So the n / k sublists are sorted in O(nk) time.
+
+b. We can just use the usual merging procedure on the n / k sublists. The depth
+   of the merge tree is then lg(n) - lg(k) = lg(n / k), so the worst-case time
+   is O(nlg(n / k)).
+
+c. O(nk + nlg(n / k)) = O(nlg(n)) as n -> inf, so for large n the runtime has the
+   same asymptotic behaviour.
+   
+d. Assume that the worst-case runtime is T(n, k) = c1nk + c2nlog(n / k).
+   Differentiating with respect to k, there is a global minimum where
+   k = c2 / c1.
+   So there is a constant value of k which minimises the runtime, which will in
+   practice be one of floor(c2 / c1) or ceil(c2 / c1).
