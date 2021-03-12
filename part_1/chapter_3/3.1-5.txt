@@ -1,0 +1,10 @@
+   f(n) = Theta(g(n))
+=> There exist c1, c2, N s.t. for all n > N, c1 * g(n) <= f(n) <= c2 * g(n).
+=> f(n) = Omega(g(n)) and f(n) = O(g(n))
+
+   f(n) = Omega(g(n)) and f(n) = O(g(n))
+=> There exist c1, c2, N1, N2 s.t.:
+   i.  for all n > N1, c1 * g(n) <= f(n)
+   ii. for all n > N2, f(n) <= c2 * g(n)
+=> For all n > max(N1, N2), c1 * g(n) <= f(n) <= c2 * g(n)
+=> f(n) = Theta(g(n))

@@ -1,0 +1,8 @@
+Let Tw(n) and Tb(n) be the worst and best case running times respectively. Then
+Tw(n) = O(g(n)) => There exist cw, Nw s.t. for all n > Nw, Tw(n) <= cw * g(n)
+Tb(n) = Omega(g(n)) => There exist cb, Nb s.t. for all n > Nb, Tb(n) >= cb * g(n)
+
+Then for any n > max(Nw, Nb), we have
+cb * g(n) <= Tb(n) <= Tw(n) <= cw * g(n).
+
+Since Tb and Tw bound the running time, we have that the runtime is Theta(g(n)).

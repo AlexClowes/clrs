@@ -1,0 +1,5 @@
+(n + a)^b = n^b + an^(b-1) + ... + a^b
+
+For sufficiently large n, the n^b term dominates and we have
+   n^b / 2 < (n + a)^b < 2n^b
+=> (n + a)^b = Theta(n^b)

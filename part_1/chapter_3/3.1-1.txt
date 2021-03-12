@@ -1,0 +1,6 @@
+There exists N s.t. for all n > N, f(n) > 0 and g(n) > 0.
+Then max(f(n), g(n)) < f(n) + g(n) for all n > N.
+
+For all n, (f(n) + g(n)) / 2 <= max(f(n), g(n)).
+
+So max(f(n), g(n)) = Theta(f(n) + g(n)).

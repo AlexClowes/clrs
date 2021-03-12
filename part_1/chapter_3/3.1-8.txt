@@ -1,0 +1,2 @@
+Omega(g(n, m)) = {f(n, m): there exist c, N, M > 0 s.t. for all n > N or m > M, c * g(n, m) <= f(n, m)}
+Theta(g(n, m)) = {f(n, m): there exist c1, c2, N, M > 0 s.t. for all n > N or m > M, c1 * g(n, m) <= f(n, m) <= c2 * g(n, m)}

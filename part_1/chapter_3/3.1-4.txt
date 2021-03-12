@@ -1,0 +1,9 @@
+   2^n < 2^(n+1) < 3 * 2^n
+=> 2^(n+1) = Theta(2^n)
+
+For any positive constant c, let n > log2(c). Then
+   2n > n + log2(c)
+=> 2^(2n) > c * 2^n
+
+So there is no constant c such that 2^2n <= c * 2^n for sufficiently large n.
+i.e. 2^(2n) != Theta(2^n).

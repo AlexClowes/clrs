@@ -1,0 +1,4 @@
+Suppose we have a function f ∈  o(g(n)) ∩ omega(g(n)).
+Then f ∈  o(g(n)) => f(n) / g(n) -> 0 as n -> inf.
+     f ∈  omega(g(n)) => f(n) / g(n) -> inf as n -> inf.
+This is a contradiction, so f cannot exist and the set is empty.
