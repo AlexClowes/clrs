@@ -1,0 +1,9 @@
+   n! = sqrt(2πn)(n / e)^n * (1 + Θ(n))
+=> log(n!) = 1/2 * log(2πn) + nlog(n) - n + log(1 + Θ(n))
+           = Θ(nlog(n))
+
+n / 2 > 1 for all n > 2.
+So n! / 2^n -> inf as n -> inf => n! = ω(2^n).
+
+((n + 1)! / (n + 1)^(n + 1)) / (n! / n^n) = (n / (n + 1))^n < 1
+So n! / n^n -> 0 as n -> inf => n! = o(n^n).

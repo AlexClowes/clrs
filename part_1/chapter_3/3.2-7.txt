@@ -1,0 +1,11 @@
+Use φ and ψ for the two roots.
+
+(φ^0 - ψ^0) / sqrt(5) = 0 = F0, so true for i = 0.
+
+Suppose (φ^i - ψ^i) / sqrt(5) = Fi for i = 0, 1, ..., k. Then
+  (φ^(k + 1) - ψ^(k + 1)) / sqrt(5)
+= (φ^(k - 1) * (φ + 1) -  ψ^(k - 1) * (ψ + 1)) / sqrt(5)
+= (φ^k - ψ^k + φ^(k - 1) - ψ^(k - 1)) / sqrt(5)
+= Fk + Fk-1
+= Fk+1
+As required.

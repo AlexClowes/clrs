@@ -1,0 +1,4 @@
+   klog(k) = Θ(n)
+=> n = Θ(klog(k))
+=> log(n) = Θ(log(k) + log(log(k))) = Θ(log(k))
+=> n / log(n) = Θ(klog(k) / log(k)) = Θ(k)

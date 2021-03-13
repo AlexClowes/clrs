@@ -1,0 +1,20 @@
+Let f be a function.
+    f is polynomially bounded
+<=> there exists integer k > 0 s.t. f(n) = O(n^k).
+<=> there exists c, N > 0 s.t. for all n > N, f(n) < c * n^k
+<=> log(f(n)) < log(c) + k * log(n)
+<=> log(f(n)) = O(log(n))
+
+We know that log(n!) = O(nlog(n))
+Substituting gives log(ceil(log(n))!) = O(ceil(log(n)) * log(ceil(log(n)))).
+But ceil(log(n)) * log(ceil(log(n))) grows faster asymptotically than log(n),
+so log(ceil(log(n))!) != O(log(n)) => ceil(log(n))! != O(n^k) for any integer k.
+i.e. ceil(log(n))! is not polynomially bounded.
+
+Also,
+log(ceil(log(log(n)))!) = O(ceil(log(log(n))) * log(ceil(log(log(n)))))
+                        = O(log(log(n)) * log(log(log(n))))
+                        = o(log(log(n))^2)
+                        = o(log(n))
+                        = O(log(n))
+So ceil(log(log(n)))! is polynomially bounded.

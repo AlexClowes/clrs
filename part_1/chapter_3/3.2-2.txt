@@ -1,0 +1,4 @@
+By definition,
+   b^logb(c) = c
+=> b^(logb(a) * logb(c)) = c^logb(a)
+=> a^logb(c) = c^logb(a)

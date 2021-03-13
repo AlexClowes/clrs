@@ -1,0 +1,9 @@
+Suppose f, g are monotonically increasing functions, and m > n so that f(m) > f(n)
+and g(m) > g(n). Then the following are true:
+
+f(m) + g(m) > f(n) + g(n) => f + g is monotonically increasing.
+
+g(m) > g(n) => f(g(m)) > f(g(n)) => f∘g is monotonically increasing.
+
+If f, g are non-negative functions, then f(m) * g(m) > f(n) * g(n) => f * g is monotonically increasing.
+
