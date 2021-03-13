@@ -1,0 +1,10 @@
+a. For sufficiently large n, the leading term in p dominates, so p(n) = O(n^d).
+   So if k >= d, then p(n) = O(n^d) = O(n^k).
+
+b. p(n) = Ω(n^d). So if k <= d, then p(n) = Ω(n^d) = Ω(n^k).
+
+c. p(n) = Θ(n^d). So if k == d, then done.
+
+d. p(n) = O(n^d). So if k > d, then p(n) = o(n^k).
+
+e. p(n) = Ω(n^d). So if k < d, then p(n) = ω(n^k).

@@ -1,0 +1,23 @@
+a. By definition, f(n) = O(g(n)) if ∃ c, N ∀ n > N f(n) <= cg(n).
+   So if f(n) ≠ O(g(n)), then ∀ c, N ∃ n > N f(n) > cg(n).
+
+   By definition, f(n) = Ω∞(g(n)) if ∃ c ∀ N ∃ n > N f(n) >= cg(n).
+   So if f(n) ≠ Ω∞(g(n)), then ∀ c ∃ N ∀ n > N f(n) < cg(n).
+
+   These contradict, so we cannot have f(n) ≠ O(g(n)) and f(n) ≠ Ω∞(g(n)) both
+   true.
+
+   Conversely, 2^(nsin(n)) ≠ O(n) and 2^(nsin(n)) ≠ Ω(n).
+
+b. Ω∞ is useful for reasoning about functions like 2^(nsin(n)), which can take
+   arbitrarily large and small values as n → ∞.
+
+c. Clearly f(n) = O(g(n)) => f(n) = O'(g(n)), but the converse is not true.
+   e.g. sin(n) = O'(1) but sin(n) ≠ O(1).
+   Then f(n) = Θ(g(n)) => f(n) = O'(g(n)) and f(n) = Ω(g(n)).
+   This version of Theorem 3.1 replaces "iff" with "implies".
+
+d. f(n) = Ω~(g(n)) iff ∃ c, k, N ∀ N > n 0 ≤ cg(n)lg(n)^-k ≤ f(n).
+   f(n) = Θ~(g(n)) iff ∃ c1, c2, k1, k2, N ∀ N > n c1g(n)lg(n)^-k1 ≤ f(n) ≤ c2g(n)lg(n)^k2.
+
+   Obviously f(n) = Θ~(g(n)) ⇔  f(n) = O~(g(n)) and f(n) = Ω~(g(n)).

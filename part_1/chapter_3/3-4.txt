@@ -1,0 +1,28 @@
+a. 1 = O(n) but n != O(1). So false.
+
+b. n + 1 != Θ(1) = Θ(min(n, 1)). So false.
+
+c. Suppose ∃ c, N > 0 s.t. ∀ n > N, f(n) >= 1, lg(g(n)) >= 1 and f(n) <= c * g(n).
+   We can also choose c so that lg(c) > -1.
+   Then ∀ n > N, lg(f(n)) <= lg(c) + lg(g(n)).
+                          <= lg(c) * lg(g(n)) + lg(g(n))
+                          <= (lg(c) + 1) * lg(g(n)).
+   So lg(f(n)) = O(lg(g(n))), i.e. true.
+
+d. 2n = O(n) but 2^2n != O(2^n). So false.
+
+e. 1/n != O(1/n^2). So false.
+
+f. f(n) = O(g(n)) => ∃ c, N > 0 ∀ n > N f(n) <= c * g(n)
+                  => ∃ c, N > 0 ∀ n > N g(n) >= (1 / c) * f(n)
+                  => g(n) = Ω(f(n))
+   So true.
+
+g. 2^(2n) != Θ(2^n). So false.
+
+h. Let f and g be asymptotically positive and g(n) = o(f(n)).
+   Then ∃ N1 ∀ n > N1 g(n) < f(n),
+   and  ∃ N2 ∀ n > N2 g(n) > 0.
+   So ∀ n > max(N1, N2) f(n) < f(n) + g(n) < 2f(n)
+   => f(n) + g(n) = Θ(f(n))
+   So true.

@@ -1,0 +1,9 @@
+   f(n)       c  f*c(n)
+a. n - 1      0  ceil(n) = Θ(n)
+b. lg(n)      1  lg*(n) = Θ(lg*(n))
+c. n / 2      1  ceil(lg(n)) = Θ(log(n))
+d. n / 2      2  max(0, ceil(lg(n)) - 1) = Θ(log(n))
+e. sqrt(n)    2  ceil(lg(lg(n))) = Θ(log(log(n)))
+f. sqrt(n)    1  Undefined
+g. n^(1/3)    2  ceil(log3(log2(n))) = Θ(log(log(n)))
+h. n / lg(n)  2  o(lg(n))

@@ -1,0 +1,7 @@
+A         B          O  o  Ω  ω  Θ
+log(n)^k  n^ε        Y  Y  N  N  N
+n^k       c^n        Y  Y  N  N  N
+sqrt(n)   n^sin(n)   N  N  N  N  N
+2^n       2^(n / 2)  N  N  Y  Y  N
+n^log(c)  c^log(n)   Y  N  Y  N  Y
+log(n!)   log(n^n)   Y  N  Y  N  Y
