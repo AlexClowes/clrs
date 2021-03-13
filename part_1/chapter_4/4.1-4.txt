@@ -1,0 +1,4 @@
+The base case of FIND-MAXIMUM-SUBARRAY should change, so that if A[low] < 0, we
+return the empty subarray instead.
+Also, the procedure FIND-MAX-CROSSING-SUBARRAY should return the empty array if
+left-sum + right-sum < 0.

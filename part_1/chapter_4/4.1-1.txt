@@ -1,0 +1,2 @@
+When all elements of A are negative, FIND-MAXIMUM-SUBARRAY returns a subarray
+of length 1, containing the largest element of A.

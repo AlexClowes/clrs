@@ -1,0 +1,10 @@
+max-sum = -inf
+for i = 1 to A.length
+    sum = 0
+    for j = i to A.length
+        sum = sum + A[j] 
+        if sum > max-sum
+            max-sum = sum
+            left = i
+            right = j
+return (left, right, max-sum)
