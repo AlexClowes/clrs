@@ -1,0 +1,12 @@
+Suppose T(m) ≤ cmlog(m) + 1 ∀ m < n. Then
+T(n) = 2T(floor(n / 2)) + n
+     ≤ 2cfloor(n / 2)log(floor(n / 2)) + 2 + n
+     ≤ cnlog(n) - cnlog(2) + 2 + n
+     ≤ cnlog(n) + 1
+so long as
+  n + 1 - cnlog(2) ≤ 0
+⇒ c ≥ (n + 1) / nlog(2)
+which is true if c ≥ 2 for n ≥ 1 (assuming logarithms base 2).
+
+2 * 1 * log(1) + 1 = 1
+so the boundary condition T(1) = 1 is satisfied.

@@ -1,0 +1,7 @@
+Suppose we can multiply 3x3 matrices with k multiplications. Then we can implement
+multiplication for arbitrary matrices in T(n) = kT(n / 3) + Θ(n^2) time.
+By the master theorem, this will run in Θ(n^log3(k)) time, provided that
+∃ ε > 0 s.t. log3(k) > 2 + ε ⇒ k > 9.
+So we seek the largest k s.t. log3(k) < log2(7), i.e.
+k = floor(3^log2(7)) = 21
+The runtime of this algorithm would be T(n) = Θ(n^log3(21)) ~ Θ(n^2.77).

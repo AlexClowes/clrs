@@ -1,0 +1,9 @@
+Suppose T(m) ≤ clog(m - 1) ∀ m < n. Then
+T(n) = T(ceil(n / 2)) + 1
+     ≤ clog(ceil(n / 2) - 1) + 1
+     < clog(n - 1) + 1 - clog(2)
+     ≤ clog(n - 1)
+so long as
+  1 - clog(2) ≤ 0
+⇒ c ≥ 1 / log(2)
+which is true if c = 1 (assuming log base 2).

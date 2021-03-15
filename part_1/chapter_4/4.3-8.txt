@@ -1,0 +1,12 @@
+Suppose T(m) ≤ cm^2 ∀ m < n. Then
+T(n) = 4T(n / 2) + n
+     ≤ cn^2 + n
+     > cn^2
+So the proof fails.
+
+Suppose T(m) ≤ cm^2 - m ∀ m < n. Then
+T(n) = 4T(n / 2) + n
+     ≤ cn^2 - n.
+So T(n) = O(n^2).
+
+The proof that T(n) = Ω(n^2) is straightforward, so T(n) = Θ(n^2).

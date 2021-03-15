@@ -1,0 +1,7 @@
+log68(132464) ~ 2.79512849
+log70(143640) ~ 2.79512270
+log72(155424) ~ 2.79514739
+
+So the asymptotically fastest algorithm would use 143640 multiplications to
+multiply 70x70 matrices. This is faster than Strassen's algorithm, since
+log2(7) ~ 2.81 > 2.795.

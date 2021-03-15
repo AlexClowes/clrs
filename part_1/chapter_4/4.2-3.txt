@@ -1,0 +1,7 @@
+Pad the input matrices with zeros so that they are 2^k x 2^k matrices for some
+integer k, then use Strassen's algorithm.
+Let T be the running time of the original algorithm, and T' be the running time
+of the modified algorithm.
+  T(n) ≤ T'(n) < T(2n - 2)
+⇒ Θ(n^log2(7)) ≤ T'(n) < Θ((2n - 2)^log2(7)) = Θ(n^log2(7))
+⇒ T'(n) = Θ(n^log2(7))

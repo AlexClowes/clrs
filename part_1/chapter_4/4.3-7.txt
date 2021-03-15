@@ -1,0 +1,14 @@
+Suppose T(m) ≤ cm^log3(4) ∀ m < n. Then
+T(n) = 4T(n / 3) + n
+     ≤ 4c(n / 3)^log3(4) + n
+     = cn^log3(4) + n
+     > cn^log3(4)
+So the proof fails.
+
+Suppose T(m) ≤ cm^log3(4) - 3m ∀ m < n. Then
+T(n) = 4T(n / 3) + n
+     ≤ 4c(n / 3)^log3(4) - 4n + n
+     = cn^log3(4) - 3n
+So T(n) = O(n^log3(4)).
+
+No substitution is required to prove T(n) = Ω(n^log3(4)), and hence T(n) = Θ(n^log3(4)).

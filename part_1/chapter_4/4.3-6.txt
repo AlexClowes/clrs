@@ -1,0 +1,8 @@
+Suppose T(m) ≤ c(m - 34)log(m - 34) ∀ m < n. Then
+T(n) = 2T(floor(n / 2) + 17) + n
+     ≤ 2c(floor(n / 2) - 17)log(floor(n / 2) - 17) + n
+     ≤ c(n - 34)log(n - 34) - c(n - 34) + n
+     ≤ c(n - 34)log(n - 34)
+so long as
+c ≥ n / (n - 34)
+which is true if c = 35, n ≥ 35.

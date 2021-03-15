@@ -1,0 +1,26 @@
+For n = 1, T(n) = Θ(1)
+For n > 1, T(n) = T(ceil(n / 2)) + T(floor(n / 2)) + f(n), with f(n) = Θ(n).
+
+Suppose T(m) ≤ c(m - 1)log(m - 1) ∀ m < n.
+For sufficiently large n, ∃ k > 0 s.t. f(n) ≤ kn. So the recurrence becomes
+T(n) ≤ T(ceil(n / 2)) + T(floor(n / 2)) + kn
+     ≤ c(ceil(n / 2) - 1)log(ceil(n / 2) - 1) + c(floor(n / 2) - 1)log(floor(n / 2) - 1) + kn
+     < c(n - 1)log(n - 1) - c(n - 1) + kn
+     ≤ c(n - 1)log(n - 1)
+so long as
+c ≥ kn / (n - 1),
+true for c = 2k.
+So T(n) = O(nlog(n)).
+
+Suppose T(m) ≥ c(m + 1)log(m + 1) ∀ m < n.
+For sufficiently large n, ∃ k > = s.t. f(n) ≥ kn. So the recurrence becomes
+T(n) ≥ T(ceil(n / 2)) + T(floor(n / 2)) + kn
+     ≥ c(ceil(n / 2) + 1)log(ceil(n / 2) + 1) + c(floor(n / 2) + 1)log(floor(n / 2) + 1) + kn
+     > c(n + 1)log(n + 1) - c(n + 1) + kn
+     ≥ c(n + 1)log(n + 1)
+so long as
+c ≥ kn / (n + 1),
+true for c = k.
+So T(n) = Ω(nlog(n)).
+
+∴ T(n) = Θ(nlog(n)).

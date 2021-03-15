@@ -1,0 +1,5 @@
+  T(n) = 3T(√n) + log(n)
+⇒ T(2^m) = 3T(2^(m / 2)) + m
+Let S(m) = T(2^m), so S(m) = 3S(m / 2) + m.
+By the master theorem, S(m) = Θ(m^log(3)).
+∴ T(n) = S(log(m)) = Θ(log(n)^log(3)).

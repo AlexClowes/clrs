@@ -1,0 +1,11 @@
+Suppose T(m) ≥ c(m+1)log(m+1) ∀ m < n. Then
+T(n) = 2T(floor(n / 2)) + n
+     ≥ 2c(floor(n / 2) + 1)log(floor(n / 2) + 1) + n
+     ≥ c(n + 1)log(n + 1) - c(n + 1)log(2) + n
+     ≥ c(n + 1)log(n + 1)
+so long as
+  n - c(n + 1)log(2) ≥ 0
+⇒ c ≤ n / (n + 1)
+which is true if c ≤ 1 / 2 (assuming logarithms base 2).
+
+So T(n) = Ω(nlog(n)) ⇒ T(n) = Θ(nlog(n)).

@@ -1,0 +1,5 @@
+The first multplication is equivalent to performing k^2 multplications, so with
+Strassen's algorithm it runs in Θ(k^2 * n^log2(7)) time.
+
+The first multiplication is equivalent to performing k multiplications, so with
+Strassen's algorithm it runs in Θ(k * n^log2(7)) time.
