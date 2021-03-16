@@ -1,0 +1,6 @@
+T(n) = Θ(n^logb(a)) + Σ_{j=0}^{logb(n) - 1}a^jf(n / b^j)
+     = Θ(n^logb(a)) + Θ(Σ_{j=0}^{logb(n) - 1}a^j * (n / b^j)^logb(a) * log(n / b^j)^k)
+     = Θ(n^logb(a)) + Θ(n^logb(a) * (logb(n)^(k + 1) - log(b)^k * Σ_{j=0}^{logb(n) - 1}j^k))
+But Σ_{j=0}^{logb(n) - 1}j^k = logb(n)^(k + 1), so
+T(n) = Θ(n^logb(a)) + Θ(n^logb(a) * log(n)^(k + 1))
+     = Θ(n^logb(a) * log(n)^(k + 1)).

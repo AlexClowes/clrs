@@ -1,0 +1,2 @@
+n0 = n
+nj = ceil(n / b^j) for j > 0

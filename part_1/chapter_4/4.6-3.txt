@@ -1,0 +1,10 @@
+∃ c < 1 s.t. f(n) ≥ (a / c)f(n / b) for sufficiently large n.
+Suppose ∀ m < n f(m) ≥ dm^(logb(a) - logb(c)) for some constant d.
+Because we have a free choice of b, the base case is trivial.
+Then f(n) ≥ (a / c)f(n / b)
+          ≥ (a / c)d(n / b)^(logb(a / c))
+          = dn^(logb(a) - logb(c))
+So f(n) = Ω(n^(logb(a) - logb(c))).
+
+Since 0 < c < 1, we can write ε = -logb(c) > 0, and then we have found ε > 0 s.t.
+f(n) = Ω(n^(logb(a) + ε)).
