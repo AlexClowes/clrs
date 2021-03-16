@@ -1,0 +1,21 @@
+There are ~log(n) layers, each with runtime ~n, so guess Θ(nlog(n)).
+
+Suppose T(m) ≤ bmlog(m) ∀ m < n. Then
+T(n) = T(αn) + T((1 - α)n) + cn
+     ≤ bαnlog(αn) + b(1 - α)nlog((1 - α)n) + cn
+     = bnlog(n) + n(bαlog(α) + b(1 - α)log(1 - α) + c)
+     ≤ bnlog(n)
+so long as
+b ≥ -c / log(α^α * (1 - α)^(1 - α)).
+So T(n) = O(nlog(n)).
+
+Suppose T(m) ≥ bmlog(m) ∀ m < n. Then
+T(n) = T(αn) + T((1 - α)n) + cn
+     ≥ bαnlog(αn) + b(1 - α)nlog((1 - α)n) + cn
+     = bnlog(n) + n(bαlog(α) + b(1 - α)log(1 - α) + c)
+     ≥ bnlog(n)
+so long as
+b ≤ -c / log(α^α * (1 - α)^(1 - α)).
+So T(n) = Ω(nlog(n)).
+
+∴ T(n) = Θ(nlog(n)).

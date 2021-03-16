@@ -1,0 +1,13 @@
+The tree has ~log2(n) layers, so the total runtime is bounded by
+O(n(1 + 2 + 4 + ... + 2^(log2(n) - 1))) = O(n^2).
+
+Suppose T(m) ≤ cm^2 - dm ∀ m < n. Then
+T(n) = 4T(n / 2 + 2) + n
+     ≤ 4(cn^2 / 4 + 2cn + 4c - dn / 2 - 2d) + n
+     = cn^2 - dn + 8cn - dn + n + 16c - 8d
+     ≤ cn^2 - dn
+so long as
+d ≥ (8cn + n + 16c) / (n + 8).
+For example, this holds for c = 1/8, d = 2.
+
+So T(n) = O(n^2).

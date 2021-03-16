@@ -1,0 +1,14 @@
+The tree has ≤ log2(n) layers, so, the total runtime is bounded above by
+n(1 + 3/2 + 9/4 + ... + (3/2)^(log2(n) - 1)) = O(n^log2(3))
+
+Suppose T(m) ≤ cm^log2(3) - dm ∀ m < n. Then
+T(n) = 3T(floor(n / 2)) + n
+     ≤ 3cfloor(n / 2)^log2(3) - 3dfloor(n / 2) + n
+     ≤ cn^log2(3) - dn + (1 + d)n - 3dfloor(n / 2)
+     ≤ cn^log2(3) - dn
+so long as
+(1 + d)n - 3dfloor(n / 2) ≤ 0
+which is true so long as
+d > 2 and n ≥ 3d / (d - 2).
+
+So T(n) = O(n^log2(3)).

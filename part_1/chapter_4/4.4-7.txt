@@ -1,0 +1,19 @@
+The tree has ~log4(n) layers, so the runtime is on the order of
+cn(1 + 2 + 4 + ... + n) = Θ(n^2).
+
+Suppose T(m) ≤ bm^2 - 2cm ∀ m < n. Then
+T(n) = 4T(floor(n / 2)) + cn
+     ≤ 4(bfloor(n / 2)^2 - 2cfloor(n / 2)) + cn
+     ≤ bn^2 - 2cn + c(3n - 8floor(n / 2))
+     ≤ bn^2 - 2cn
+So T(n) = O(n^2).
+
+Suppose T(m) ≥ bm^2 ∀ m < n. Then
+T(n) = 4T(floor(n / 2)) + cn
+     ≥ 4bfloor(n / 2)^2 + cn
+If n is even, 4bfloor(n / 2)^2 + cn = bn^2 + cn > bn^2.
+If n is odd, 4bfloor(n / 2)^2 + cn = bn^2 - 2bn + b + cn > bn^2 so long as
+b ≤ cn / (2n - 1).
+So T(n) = Ω(n^2).
+
+∴ T(n) = Θ(n^2).

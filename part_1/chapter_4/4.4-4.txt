@@ -1,0 +1,10 @@
+By inspection, T(n) = 2^n * (T(0) + 1) - 1 = O(2^n).
+
+The tree has depth ≤ n, so the total runtime is bounded above by
+1 + 2 + 4 + ... + 2^n = 2^(n + 1) - 1 = O(2^n).
+
+Suppose T(n) = 2^n * (T(0) + 1) - 1 (clearly true for n = 0). Then
+T(n + 1) = 2T(n) + 1
+         = 2^(n + 1) * (T(0) + 1) - 2 + 1
+         = 2^(n + 1) * (T(0) + 1) - 1
+So T(n) = O(2^n).

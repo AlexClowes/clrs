@@ -1,0 +1,4 @@
+The tree has > log3(n) layers, so the total runtime is bounded below by
+O(cn * log3(n)) = O(nlog(n)).
+
+So the runtime is Ω(nlog(n)).
