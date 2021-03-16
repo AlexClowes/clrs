@@ -1,0 +1,3 @@
+T(n) = T(n / 2) + Θ(1)
+Using the master theorem with a = 1, b = 2, f(n) = Θ(1), we see that
+T(n) = Θ(n^log2(1) * log(n)) = Θ(log(n)).

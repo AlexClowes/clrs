@@ -1,0 +1,7 @@
+a. T(n) = Θ(sqrt(n))
+
+b. T(n) = Θ(sqrt(n)log(n))
+
+c. T(n) = Θ(n)
+
+d. T(n) = Θ(n^2)

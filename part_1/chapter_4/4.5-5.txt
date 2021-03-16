@@ -1,0 +1,9 @@
+We need constants a ≥ 1, b > 1, ε > 0, so choose a = 1, b = 2, ε = 1.
+Then we need a function f(n) = Ω(n^(logb(a) + ε)) = Ω(n), s.t.
+∀ c < 1 ∀ N > 0 ∃ n > N f(n / 2) > cf(n).
+
+So we need a function that is not monotonic, but is Ω(n). Try f(n) = 2n - ncos(n).
+f(n) ≥ n ⇒ f(n) = Ω(n).
+
+For integer k, f(4kπ) = 8kπ - 4kπ = 4kπ, f(2kπ) = 4kπ + 2kπ = 6kπ.
+So there are infinitely many n s.t. f(n / 2) > cf(n), for any c < 1.

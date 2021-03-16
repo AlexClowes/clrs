@@ -1,0 +1,7 @@
+T(n) = aT(n / 4) + Θ(n^2).
+Assume that a > 16, so that T(n) = Θ(n^log4(a)).
+So we seek the largest value of a s.t.
+  log4(a) < log2(7)
+⇒ a < 4^log2(7) = 49
+So for the algorithm to be asymptotically faster than Strassen's algorithm, the
+largest possible value of a is 48.
