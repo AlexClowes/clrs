@@ -1,0 +1,30 @@
+a. By the Master Theorem, T(n) = Θ(n^log3(4)).
+b. Let S(n) = T(3^n) = 3T(3^(n - 1)) + 3^n / log(3^n) = 3S(n - 1) + 3^n / log(3^n)
+   S(n) = (3^n / log(3)) * (1 / n + 1 / (n - 1) + ... + 1)
+        = (3^n / log(3)) * Θ(log(n))
+        = Θ(3^n * log(n))
+   ⇒ T(n) = S(log3(n)) = Θ(nlog(log(n))).
+c. By the Master Theorem, T(n) = Θ(n^2.5).
+d. The asymptotic behaviour is the same as T(n) = 3T(n / 3) + n. By the Master
+   Theorem, T(n) = Θ(nlog(n)).
+e. Same as b., T(n) = Θ(nlog(log(n))).
+f. Clearly T(n) = Ω(n).
+   Suppose T(m) ≤ cm ∀ m < n. Then
+   T(n) = T(n / 2) + T(n / 4) + T(n / 8) + n
+        ≤ (7/8)cn + n
+        ≤ cn
+   for c ≥ 8.
+   So T(n) = O(n) and hence T(n) = Θ(n).
+g. T(n) = 1 / n + 1 / (n - 1) + ... + 1 = Θ(log(n)).
+h. T(n) = log(n) + log(n - 1) + ... + log(1) = log(n!) = Θ(nlog(n)).
+i. T(n) = 1/log(n) + 1/log(n - 2) + ... + log(r), where r = n % 2
+        = Θ(∫_1^n 1/log(x) dx)
+        = Θ(n / log(n))
+j. Suppose T(m) ≤ cmlog(log(m)) ∀ m < n. Then
+   T(n) = sqrt(n)T(sqrt(n)) + n
+        ≤ cnlog(log(sqrt(n))) + n
+        = cnlog(log(n)) + n(1 - c)
+        ≤ cnlog(log(n))
+   for c ≥ 1.
+   So T(n) = O(nlog(log(n))).
+   Similarly, T(n) = Ω(nlog(log(n))) and hence T(n) = Θ(nlog(log(n))).

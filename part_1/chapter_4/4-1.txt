@@ -1,0 +1,10 @@
+a. By the Master Theorem, Θ(n^4).
+b. By the Master Theorem, Θ(n).
+c. By the Master Theorem, Θ(n^2log(n)).
+d. By the Master Theorem, Θ(n^2).
+e. By the Master Theorem, Θ(n^log2(7)).
+f. By the Master Theorem, Θ(sqrt(n)log(n)).
+g. T(n) = T(n - 2) + n^2.
+   If n is even, T(n) = T(0) + 2^2 + 4^2 + ... + n^2 = Θ(n^3).
+   If n is odd, T(n) = T(1) + 3^2 + 5^2 + ... + n^2 = Θ(n^3).
+   So T(n) = Θ(n^3).

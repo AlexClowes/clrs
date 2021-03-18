@@ -1,0 +1,7 @@
+a. 1. Recurrence is T(n) = T(n / 2) + Θ(1) ⇒ T(N) = Θ(log(N))
+   2. Recurrence is T(n) = T(n / 2) + Θ(N) ⇒ T(N) = Θ(Nlog(N))
+   3. Recurrence is T(n) = T(n / 2) + Θ(n) ⇒ T(N) = Θ(N)
+
+b. 1. Recurrence is T(n) = 2T(n / 2) + Θ(n) ⇒ T(N) = Θ(Nlog(N))
+   2. Recurrence is T(n) = 2T(n / 2) + Θ(N) ⇒ T(N) = Θ(N^2)
+   3. Recurrence is T(n) = 2T(n / 2) + Θ(n) ⇒ T(N) = Θ(Nlog(N))

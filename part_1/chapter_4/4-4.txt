@@ -1,0 +1,21 @@
+a. F(z) = Σ_{i=0}^∞ f_i * z^i
+        = 0 + z + Σ_{i=2}^∞ (f_{i-1} + f_{i-2}) * z^i
+        = z + Σ_{i=2}^∞ f_{i-1} * z^i + Σ_{i=2}^∞ f_{i-2} * z^i
+        = z + Σ_{i=1}^∞ f_i * z^(i+1) + Σ_{i=0}^∞ f_i * z^(i+2)
+        = z + zF(z) + z^2F(z)
+
+b.   (1 - z - z^2)F(z) = z
+   ⇒ F(z) = z / (1 - z - z^2)
+          = z / ((1 - φz)(1 - ψz))
+   Where 1/φ, 1/ψ are the roots of 1 - x - x^2 = 0 ⇒ x = (-1 ± √5) / 2 ⇒ φ, ψ = (1 ± √5) / 2.
+   Also, 1 / (1 - φz) - 1 / (1 - ψz) = √5 / ((1 - φz)(1 - ψz)),
+   so F(z) = (1 / (1 - φz) - 1 / (1 - ψz)) / √5.
+
+c. F(z) = ((1 - φz)^-1 - (1 - ψz)^-1) / √5
+        = (Σ_{i=0}^∞(φz)^i - Σ_{i=0}^∞(ψz)^i) / √5
+        = (Σ_{i=0}^∞(φ^i - ψ^i)z^i) / √5
+
+d. From c. and the definition of F(z), we have f_i = (φ^i - ψ^i) / √5.
+   Since |ψ| < 1, |ψ|^i / √5 < 1 / √5 < 1 / 2, and hence |f_i - φ^i / √5| < 1/2.
+   So we can always obtain f_i by calculating φ^i / √5 and rounding to the nearest
+   integer.

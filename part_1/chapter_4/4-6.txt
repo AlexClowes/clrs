@@ -1,0 +1,50 @@
+a. Clearly if an mxn array A is Monge, then for i = 1, 2, ..., m - 1 and
+   j = 1, 2, ..., n - 1 we have
+   A[i, j] + A[i + 1, j + 1] ≤ A[i, j + 1] + A[i + 1, j].
+
+   We now prove the converse.
+   Suppose A[i, j] + A[i + 1, j + 1] ≤ A[i, j + 1] + A[i + 1, j] and let i < k < m.
+
+   Then A[i, j] + A[k, j + 1] ≤ A[i, j + 1] + A[k, j] for the base case k = i + 1.
+
+   Suppose A[i, j] + A[k, j + 1] ≤ A[i, j + 1] + A[k, j]
+   Then A[i, j] + A[k + 1, j + 1] = A[i, j] + A[k, j + 1] - A[k, j + 1] + A[k + 1, j + 1]
+                                  ≤ A[i, j + 1] + A[k, j] - A[k, j + 1] + A[k + 1, j + 1]
+                                  ≤ A[i, j + 1] - A[k, j + 1] + A[k, j + 1] + A[k + 1, j]
+                                  = A[i, j + 1] + A[k + 1, j]
+   So also true for k + 1, and by induction A[i, j] + A[k, j + 1] ≤ A[i, j + 1] + A[k, j].
+
+   Now perform another induction in the rows direction to get
+   A[i, j] + A[k, l] ≤ A[i, l] + A[k, j]
+   as required.
+
+b. Replace the 22 in the first row with 24.
+
+c. Suppose ∃ i s.t. f(i + 1) < f(i).
+   Then A[i, f(i + 1)] > A[i, f(i)]
+   and A[i + 1, f(i)] ≥ A[i + 1, f(i + 1)]
+   by the definition of f.
+   ∴ A[i, f(i + 1)] + A[i + 1, f(i)] > A[i, f(i)] + A[i + 1, f(i + 1)].
+   ⇒ A is not Monge, a contradiction.
+   So we must have ∀ i f(i) ≤ f(i + 1).
+
+d. We have the values of f(2), f(4), f(6), ..., and we seek the values of 
+   f(1), f(3), f(5), ...
+   To find f(1), we need only check the values of A[1, 1 .. f(2)].
+   To find f(3), we need only check the values of A[3, f(2) .. f(4)].
+   To find f(5), we need only check the values of A[5, f(4) .. f(6)].
+   .
+   .
+   .
+   Continuing like this, we only check n + m entries in A, so the runtime to
+   find the leftmost minima of the odd-numbered rows is O(n + m).
+
+e. The recurrence is T(m, n) = T(m / 2, n) + O(m + n).
+   ∃ d, M, N ∀ m > M ∀ n > N T(m, n) ≤ T(m / 2, n) + d(m + n).
+   Suppose ∀ p < m T(p, n) ≤ c(p + nlog(p)). Then
+   T(m, n) ≤ T(m / 2, n) + d(m + n)
+           ≤ c(m / 2 + nlog(m / 2)) + d(m + n)
+           ≤ c(m + nlog(m)) + m(d - c / 2) + n(d - c)
+           ≤ c(m + nlog(m))
+   so long as c ≥ 2d.
+   ∴ T(m, n) = O(m + nlog(m)).

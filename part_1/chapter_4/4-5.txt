@@ -1,0 +1,29 @@
+a. Suppose more than half the chips are bad. Then if there are n chips, with g < n / 2
+   good chips, we can also create a group of g bad chips. These bad chips can
+   identify each other as good, and all the good chips as bad. We then have two
+   groups of chips which are totally indistinguishable from one another using
+   the testing jig. i.e. we cannot identify any of the good chips.
+
+b. Suppose we have an even number of chips, of which more than half are good.
+   Randomly assign chips into n / 2 pairs, and test each pair. If the test tells
+   us at least one chip in a pair is bad, then discard the pair (so we discard
+   at least as many bad chips as good chips). From each remaining pair, take a
+   single chip. There will be more good / good pairs than bad / bad pairs, so
+   we will be left with < n / 2 chips, and will still have more good chips than
+   bad chips.
+   If we have an odd number of chips, set one chip aside, then apply the process
+   above to the remaining chips. This will leave us with k < n / 2 chips. Suppose
+   k is even. Then take the chip that was put aside, and we have k + 1 < ceil(n / 2)
+   chips, of which more than half are good. If k is odd, we have k < n / 2 chips,
+   of which more than half are good, so we do not need the chip set aside earlier.
+   In this way, we have halved the problem size and maintained the property that
+   more than half of the chips are good.
+
+c. If more than n / 2 chips are good, we repeat the above process until we are
+   left with a single chip, which is guaranteed to be good. We can then use this
+   known good chip to identify all the other good chips.
+   The recurrence for the time to find a single good chip is
+   T(n) ≤ T(ceil(n / 2)) + Θ(floor(n / 2)),
+   which has upper bound T(n) = O(n).
+   Comparing the n - 1 chips to the good chip takes n - 1 comparisons, so the
+   runtime is T(n) = O(n) + O(n - 1) = O(n).
