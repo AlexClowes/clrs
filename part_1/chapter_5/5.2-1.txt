@@ -1,0 +1,2 @@
+P(hire exactly once) = P(first candidate is the best candidate) = 1 / n.
+P(hire n times) = P(candidates sorted in descending order of rank) = 1 / n!.

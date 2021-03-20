@@ -1,0 +1,13 @@
+RANDOM(a, b)
+    range = 1
+    result = RANDOM(0, 1)
+    while range < b - a
+        range = range * 2
+        result = 2 * result + RANDOM(0, 1)
+    result = a + result
+    if result > b
+        return RANDOM(a, b)
+    else
+        return result
+
+The running time is O(ceil(log2(b - a))).

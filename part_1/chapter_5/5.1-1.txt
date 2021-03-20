@@ -1,0 +1,8 @@
+We can always determine which of two candidates is best. This defines a relation
+R, where for any two candidates a and b we write aRb if candidate a is the best
+candidate out of a and b. Then:
+i.   For any candidate a, aRa.
+ii.  For any candidates a, b, and c, aRb and bRc ⇒  aRc.
+iii. For any candidates a and b, aRb ↔ not bRa.
+iv.  For any candidates a and b, either aRb or bRa.
+So R is a total relation and we have a total ordering on the set of candidates.

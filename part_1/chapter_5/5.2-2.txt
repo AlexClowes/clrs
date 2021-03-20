@@ -1,0 +1,9 @@
+We always hire the first candidate, so to hire exactly two candidates, we must
+hire exactly one more candidate, who will be the best candidate (and so the first
+candidate cannot be the best).
+Suppose the first candidate is candidate i. Then there are n - i candidates better
+than i, and candidate n must be the first to appear among these candidates, which
+happens with probability 1 / (n - i).
+Since we could have i = 1, 2, ..., n - 1 each with probability 1/n, the probability
+of making exactly two hires is Σ_{i=1}^{n-1} 1 / n * 1 / (n - i) = H_n / n,
+where H_n is the nth harmonic number.

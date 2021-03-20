@@ -1,0 +1,4 @@
+Suppose we have n dice, each with d sides numbered from 1 to d. The expected
+value of a single die is (d + 1) / 2, so the expected total is n(d + 1) / 2.
+
+In the case d = 6, this is 3.5n.

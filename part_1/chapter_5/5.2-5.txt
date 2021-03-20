@@ -1,0 +1,8 @@
+For 1 ≤ i < j ≤ n, let I_ij be the indicator variable for an inversion of the
+pair (i, j). The the expected number of inversions is
+  Σ_{i=1}^{n-1}Σ_{j=i+1}^n E[I_ij]
+= Σ_{i=1}^{n-1}Σ_{j=i+1}^n P(A[i] > A[j])
+= Σ_{i=1}^{n-1}Σ_{j=i+1}^n 1/2              (since it is equally likely that A[i] > A[j] or A[i] < A[j])
+= 1/2 Σ_{i=1}^{n-1} (n - i)
+= 1/2 Σ_{i=1}^{n-1} i
+= n(n - 1) / 4

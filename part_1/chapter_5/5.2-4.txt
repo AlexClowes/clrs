@@ -1,0 +1,2 @@
+Each customer has probability 1 / n of getting their hat back. So the expected
+number of customers to get their hats back is n * 1 / n = 1.

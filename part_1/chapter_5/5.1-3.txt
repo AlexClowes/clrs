@@ -1,0 +1,11 @@
+a = BIASED-RANDOM()
+b = BIASED-RANDOM()
+while a != b
+    a = b
+    b = BIASED-RANDOM()
+return a
+
+In any given iteration of the while loop, there is a probability 2p(1-p) that a
+and b are different, so the function terminates. So the expected number of iterations
+is 1 / (2p(1-p)), and hence the runtime is Θ(1 / (p(1 - p))).
+    
