@@ -1,0 +1,2 @@
+Check if all values in P are unique, and regenerate P if not. This happens with
+probability ≤ 1/n, so has no impact on the asymptotic runtime.

@@ -1,0 +1,3 @@
+This just generates permutations σ s.t. σ(i) = (i + j) % n for j = 0, 1, ..., n - 1.
+But this means we have only n possible permutations out of n!, so clearly this
+isn't uniformly random.

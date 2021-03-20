@@ -1,0 +1,14 @@
+We require that
+∀ m ∀ n ∀ j ∈ {1, 2, ..., n} P(i ∈ RANDOM-SUBSET(m, n)) = m / n.
+
+This is trivially true for m = 0.
+
+Suppose this is true for some m and n. When making a call to
+RANDOM-SUBSET(m + 1, n + 1), let S be the result of RANDOM-SUBSET(m, n) and S'
+be the result of RANDOM-SUBSET(m + 1, n + 1).
+For j = 1, 2, ..., n - 1, P(j ∈ S') = P(j ∈ S) + P(i = j)(1 - P(j ∈ S))
+                                    = m / n + (1 / (n + 1))(1 - m / n)
+                                    = (m + 1) / (n + 1)
+For j = n, P(j ∈ S') = P(i = n) + P(i ≠ n ∧ i ∈  S)
+                     = 1 / (n + 1) + (n / (n + 1))(m / n)
+                     = m / n

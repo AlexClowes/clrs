@@ -1,0 +1,6 @@
+Start with i = 2 instead of i = 1
+
+n = A.length
+swap A[1] with A[RANDOM(1, n)]
+for i = 2 to n
+    swap A[i] with A[RANDOM(i, n)]

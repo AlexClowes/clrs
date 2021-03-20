@@ -1,0 +1,3 @@
+No. Let σ be the permutation s.t. σ(1) = 1, and ∃ n > 1 s.t. σ(n) ≠ n. Then σ
+isn't the identity permutation, but it also is not possible to generate this
+permutation with the given algorithm, which guarantees σ(1) ∈ {2, ..., n}.
