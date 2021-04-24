@@ -1,0 +1,12 @@
+Suppose we have n people in the room. Then
+P(someone shares my birthday) = 1 - P(nobody shares my birthday)
+                              = 1 - (364 / 365)^n
+So we need to find the smallest n s.t.
+   1 - (364 / 365)^n ≥ 1 / 2
+⇒  n ≥ log(2) / log(365 / 364) ~ 252.7
+So n = 253.
+
+  P(at least two people born on 4th July)
+= 1 - P(nobody born on 4th July - P(1 person born on 4th July
+= 1 - (364 / 365)^n - n(1 / 365)(364 / 365)^(n - 1)
+The smallest n for which this is ≥ 1/2 is 613.

@@ -1,0 +1,10 @@
+From the text,
+P(no streaks of more than s heads) = (1 - 2^-floor(s))^floor(n / floor(s))
+                                   ≤ (1 - 2^-s)^(n / s - 1)
+                                   ≤ e^-(2^-s * (n / s - 1))
+Substituting s = lg(n) - 2lg(lg(n)),
+2^-s * (n / s - 1) = (lg(n)^2 / n) * (n - lg(n) + 2lg(lg(n))) / (lg(n) - 2lg(lg(n)))
+                   = lg(n) * (1 - lg(n) / n + 2lg(lg(n)) / n) / (1 - 2lg(lg(n)) / lg(n))
+                   → lg(n) as n → ∞
+lg(n) > log(n), so ∃ N ∀ n > N 2^-s * (n / s - 1) > log(n)
+⇒ P(no streaks of more than s heads) ≤ e^-(2^-s * (n / s - 1)) < e^-log(n) = 1 / n

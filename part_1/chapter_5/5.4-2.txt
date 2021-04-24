@@ -1,0 +1,10 @@
+Suppose the ith toss lands in a bin that already contains a ball, and that this
+is the first toss for which this happens.
+Then the first (i-1)th tosses all landed in separate bins, which happens with
+probability
+((b - 1) / b) * ((b - 2) / b) * ... * ((b - i + 2) / b) = Π_{r=0}^{i-2}((b - r) / b)
+and the ith ball lands in one of the i - 1 occupied bins, with probability
+(i - 1) / b.
+So the expected number of tosses before stopping is
+  Σ_{i=2}^{b+1} i * ((i - 1) / b) * Π_{r=0}^{i-2}((b - r) / b)
+= Σ_{i=2}^{b+1} i! * nCr(b - 1, i - 2) / b^(i-1)

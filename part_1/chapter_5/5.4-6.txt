@@ -1,0 +1,8 @@
+Let Bi be the number of balls in the ith bin after n tosses.
+Then the expected number of empty bins is
+E[Σ_i=1^n I{Bi=0}] = Σ_i=1^n P(Bi=0)
+                   = n * (1 - 1 / n)^n
+
+The expected number of bins with exactly one ball is
+E[Σ_i=1^n I{Bi=1}] = Σ_i=1^n P(Bi=1)
+                   = n * (1 - 1 / n)^(n - 1)

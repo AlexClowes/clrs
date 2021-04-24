@@ -1,0 +1,6 @@
+A k-permutation of letters taken from a set of size n is a collection of k letters
+which are all different. So this is the probability of randomy choosing k distinct
+elments from a set of size n. i.e. this is the Birthday problem.
+
+The probability of choosing a k-permutation is
+Π_{r=0}^{k-1}((n - r) / n) = k! * nCr(n, k) / n^k.
