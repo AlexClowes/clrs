@@ -1,0 +1,47 @@
+a. RANDOM-SEARCH(x, A, n)
+   Let Seen[1 .. n] be an array with all values initialised to zero.
+   to_check = n
+   while to_check > 0
+       i = RANDOM(1, n)
+       if A[i] = x
+           return i
+       if Seen[i] ≠ 1
+           Seen[i] = 1
+           to_check = to_check - 1
+   return NIL
+
+b. On each iteration we have probability 1 / n of choosing the single correct
+   index and terminating. So the expected number of iterations is n.
+
+c. On each iteration we have probability k / n of choosing a correct index and
+   terminating. So the expected number of iterations is n / k.
+
+d. We terminate when we have checked every index at least once. Suppose we have
+   already checked k distinct indices. Then there are n - k indices left to check,
+   and we choose one with probability (n - k) / n. So the expected number of
+   iterations before choosing a new index is n / (n - k). Thus the total number
+   of expected iterations is
+   n / n + n / (n - 1) + ... + n / 1 = n(1 + 1/2 + 1/3 + ... + 1/n) = nH_n = Θ(nlog(n))
+   where H_n is the nth Harmonic number.
+
+e. The running time of DETERMINISTIC-SEARCH is proportional to i, where A[i] = x.
+   The average number of iterations is (1 + 2 + ... + n) / n = (n + 1) / 2 = Θ(n).
+   The worst case number of iterations is n = Θ(n).
+
+f. There are k indices i s.t. A[i] = x, and we will always check exactly one of
+   these indices.
+   There are n - k indices i s.t. A[i] ≠ x. We only check these indices if they
+   appear before any of the k indices j .s.t A[j] = x. So each of the indices i
+   is checked with probability 1 / (k + 1).
+   The expected number of indices checked is thus
+   1 + (n - k) / (k + 1) = (n + 1) / (k + 1) = Θ(n).
+   The worst case number of iterations is n - k + 1 = Θ(n).
+
+g. If there are no indices s.t. A[i] = x, the the average and worst case number
+   of iterations are both n.
+
+h. The runtimes are the same as for DETERMINISTIC-SEARCH, plus the time taken
+   to permute the array.
+
+i. DETERMINISTIC-SEARCH has strictly better runtime than SCRAMBLE-SEARCH, and
+   better average and worst case runtime than RANDOM-SEARCH.

@@ -1,0 +1,9 @@
+a. Let C_n be the value of the counter after n INCREMENT operations.
+     E[C_n - C_{n-1} | C_n = n_i] = (n_{i+1} - n_i) / (n_{i+1} - n_i) = 1
+   ⇒ E[C_n - C_{n-1}] = E[E[C_n - C_{n-1} | C_n = n_i]] = E[1] = 1
+   ⇒ E[C_n] = E[C_{n-1}] + 1
+   Also, C_0 = 0 with probability 1, so by induction E[C_n] = n.
+
+b. Suppose n_i = k * i. Then after n INCREMENT operations, i ~ B(n, 1/k) so
+   var(i) = n * 1/k * (1 - 1/k) ⇒ var(C_n) = var(k * i) = n(k - 1).
+   In the case k = 100 this is 99n.
