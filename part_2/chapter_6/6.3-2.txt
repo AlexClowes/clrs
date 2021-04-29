@@ -1,0 +1,3 @@
+The loop invariant requires that on each iteration the nodes i + 1, i + 2, ..., n
+are all roots of a max-heap. If we reverse the order of iteration, then this
+invariant no longer holds and the algorithm does not work.

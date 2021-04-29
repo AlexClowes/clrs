@@ -1,0 +1,7 @@
+An node at index i can have only have height h if
+  2^h * i ≤ n < 2^(h + 1) * i
+⇒ n / 2^(h+1) < i ≤ n / 2^h
+So the only nodes which can have height h have indices
+ceil(n / 2^(h+1)), ceil(n / 2^(h+1)) + 1, ..., floor(n / 2^h).
+i.e. there are at most floor(n / 2^h) - ceil(n / 2^(h+1)) + 1 ≤ ceil(n / 2^(h+1))
+nodes with height h.
