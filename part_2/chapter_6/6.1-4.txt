@@ -1,0 +1,2 @@
+If all elements are distinct, then every element must be greater than any children
+that it may have. So only leaves can be the minimal element.

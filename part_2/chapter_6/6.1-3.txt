@@ -1,0 +1,5 @@
+Suppose not, i.e. there is a subtree where the root is not a maximal element in
+the subtree.
+Let r and m be the indices of the root and a maximal element respectively.
+Then A[r] < A[m] and A[m] ≤ A[PARENT(m)] ≤ A[PARENT(PARENT(M))] ≤ ... ≤ A[r] by
+the definition of the root. Contradiction.

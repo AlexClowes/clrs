@@ -1,0 +1,5 @@
+Let A be a sorted array.
+Then ∀ i, j i < j ⇒ A[i] ≤ A[j].
+So ∀ i A[PARENT(i)] = A[floor(i / 2)] ≤ A[i].
+i.e. A satisfies the min-heap property.
+∴ Any sorted array is a min-heap.

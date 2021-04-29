@@ -1,0 +1,3 @@
+A heap of height h with k elements in the lowest level has
+Σ_{i=0}^{h-1}2^i + k = 2^h - 1 + k elements.
+1 ≤ k ≤ 2^h, so the number of elements in the heap is between 2^h and 2^(h+1) - 1.

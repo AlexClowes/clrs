@@ -1,0 +1,4 @@
+An n-element heap has height h, where
+  2^h ≤ n ≤ 2^(h+1) - 1
+⇒ h ≤ floor(lg(n)) ≤ floor(lg(2^(h+1) - 1)) < h + 1
+⇒ h = floor(lg(n))
