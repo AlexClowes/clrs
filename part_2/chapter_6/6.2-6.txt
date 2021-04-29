@@ -1,0 +1,4 @@
+Consider an array of n elements where A[1] = 0 and A[i] = 1 for 1 < i ≤ n.
+Then calling MAX-HEAPIFY(A, 1) will cause the element 0 to be moved to a leaf
+node, which requires ﬂoor(lg(n)) swaps.
+So T(n) = Ω(lg(n)).

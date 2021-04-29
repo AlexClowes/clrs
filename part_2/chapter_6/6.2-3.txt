@@ -1,0 +1,1 @@
+If A[i] > A[LEFT(i)], A[RIGHT(i)] then calling MAX-HEAPIFY(A, i) has no effect.

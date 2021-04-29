@@ -1,0 +1,2 @@
+If i > A.heap-size / 2, then LEFT(i), RIGHT(i) > A.heap-size and calling
+MAX-HEAPIFY(A, i) has no effect.
