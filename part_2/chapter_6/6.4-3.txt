@@ -1,0 +1,8 @@
+The call to BUILD-MAX-HEAP will run in O(n) time whether the array is sorted in
+increasing or decreasing order.
+Assuming that not all elements are the same, then each call to MAX-HEAPIFY will
+take O(log(i)) time for i = n, n - 1, ..., 2.
+So the total runtime is O(nlog(n)) in both cases.
+
+In the trivial case where all elements are identical, the array is technically
+sorted in both increasing and decreasing order, and the runtime is O(n).

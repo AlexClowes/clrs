@@ -1,0 +1,13 @@
+At the start of the first iteration, the loop invariant holds trivially.
+
+Suppose the loop invariant holds at the start of iteration i.
+Then A[1 .. i] is a max-heap, so the largest element in A[1 .. i] is A[1]. Also,
+A[i + 1 .. n] holds the n - i largest elements in A sorted, so A[1] must be the
+(n - i + 1)th largest element in A. So when we swap A[1] and A[n], the subarray
+A[i .. n] now holds the (n - i + 1) largest elements of A sorted.
+The call to MAX-HEAPIFY then guarantees that A[1 .. i - 1] is a max-heap.
+So the loop invariant now holds for i - 1 and hence for each i by induction.
+
+After the final iteration, the loop invariant guarantees that A[2 .. n] contains
+the largest n - 1 elements of A sorted. This leaves the smallest element at A[1],
+so A is sorted.

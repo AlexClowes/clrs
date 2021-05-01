@@ -1,0 +1,3 @@
+This is a nasty question.
+Heapsort was invented in 1964, but see Schaffer and Sedgewick 1992 for proof of
+this result.
