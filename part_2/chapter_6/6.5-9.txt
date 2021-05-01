@@ -1,0 +1,7 @@
+Build a min heap containing the first element of each of the k lists.
+To merge the lists, take the first element from the min heap, and then insert
+the next element from the corresponding list if it exists. Continue doing this
+until every list and the heap are empty.
+
+Building the initial min heap takes O(k) time, and we then do n insertions which
+take O(log(k)) time each. So the total time is O(nlog(k)).

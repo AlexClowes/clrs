@@ -1,0 +1,16 @@
+The initial case is trivially true. LEFT(i) and RIGHT(i) do not exist, and A was
+a max heap before the addition of node i, so all elements satisfy the max heap
+property except possibly for i.
+
+Suppose the loop invariant is true at the beginning of an iteration.
+By setting A[i] ← A[PARENT(i)], we now have A[i] ≥ A[LEFT(i)], A[RIGHT(i)], so
+the max-heap property is satisfied at A[i].
+By setting A[PARENT(i)] ← A[i] and i ← PARENT(i), we must have
+A[PARENT(i)] ≥ A[LEFT(i)] and A[RIGHT(i)],
+otherwise the max-heap property would not have held at A[PARENT(i)] at the
+beginning of the iteration.
+So the loop invariant is maintained.
+
+After termination, the loop invariant holds and A[PARENT(i)] ≥ A[i], so the
+max heap property holds everywhere and hence A is a max heap.
+

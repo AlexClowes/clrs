@@ -1,0 +1,5 @@
+Implement a FIFO queue with a min-heap and a counter initialised to zero. Insert
+values with key equal to the counter, then increment the counter.
+
+Implement a stack with a max-heap and a counter initialised to zero. Insert
+values with key equal to the counter, then increment the counter.

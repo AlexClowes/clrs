@@ -1,0 +1,3 @@
+The call to HEAP-INCREASE-KEY raises an error if the new key is smaller than the
+current key. By initially setting the key to -∞, we guarantee that this cannot
+happen.
