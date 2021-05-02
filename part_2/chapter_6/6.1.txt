@@ -1,0 +1,8 @@
+a. Let A = [1, 2, 3].
+   BUILD-MAX-HEAP results in the heap [3, 2, 1].
+   BUILD-MAX-HEAP' results in the heap [3, 1, 2].
+
+b. There are n - 1 iterations, each of which takes O(log(i)) time where i is the
+   the number of elements in the heap, which increases with each iteration. So the
+   total runtime is
+   Σ_{i=2}^n O(log(i)) = O(log(n!)) = O(nlog(n)).

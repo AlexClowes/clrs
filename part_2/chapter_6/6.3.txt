@@ -1,0 +1,94 @@
+a.  2  3  4  5
+    8  9 12 14
+   16  ∞  ∞  ∞
+    ∞  ∞  ∞  ∞
+
+b. Y[i, j] = ∞ ⇒ Y[i + k, j + l] > Y[i + k - 1, j + l]
+                                 > Y[i + k - 2, j + l]
+                                 ...
+                                 > Y[i, j + l]
+                                 > Y[i, j + l - 1]
+                                 ...
+                                 > Y[i, j]
+                                 > ∞
+               ⇒ Y[i + k, j + l] = ∞
+   for k, l ≥ 0, i + k < m, j + l < n.
+   So in the case i = j = 1, Y[1, 1] = ∞ ⇒ Y[i, j] = ∞ ∀ i, j.
+   
+   Similarly, Y[i, j] < ∞ ⇒ Y[i - k, j - l] < ∞ for k, l ≥ 0, i - k, j - l ≥ 1.
+   So in the case i = m, j = n, Y[m, n] = ∞ ⇒ Y[i, j] < ∞ ∀ i, j.
+
+c. EXTRACT-MIN(Y)
+       min = Y[1, 1]
+       m, n = Y.shape
+       i = 1
+       j = 1
+       while true
+           if i < m
+               down = Y[i + 1, j]
+           else
+               down = ∞
+           if j < n
+               right = Y[i, j + 1]
+           else
+               right = ∞
+           if down = ∞ and right = ∞
+               Y[i, j] = ∞
+               return min
+           if down < right
+               Y[i, j] = down
+               i += 1
+           else
+               Y[i, j] = right
+               j += 1
+   
+   T(p) = T(p - 1) + O(1) ⇒ T(p) = O(p)
+   So the runtime is O(m + n).
+
+d. INSERT(Y, key)
+       i, j = Y.shape
+       while True
+           if i > 1
+               up = Y[i - 1, j]
+           else
+               up = -∞
+           if j > 1
+               left = Y[i, j - 1]
+           else
+               left = -∞
+           if key > up and key > left
+               Y[i, j] = key
+               return
+           if up > left
+               Y[i, j] = up
+               i = i - 1
+           else
+               Y[i, j] = left
+               j = j - 1
+
+    Similarly to c., the runtime is O(m + n).
+
+e. YOUNGS-TABLEAU-SORT(A, n)
+       let Y be an nxn array
+       for i = 1 to n^2
+           INSERT(Y, A[i])
+       for i = 1 to n^2
+           A[i] = EXTRACT-MIN(Y)
+
+   Starting with an empty nxn Young's tableau, we can insert each element to be
+   sorted. This takes O(n^2 * (n + n)) = O(n^3) time.
+   We can then call EXTRACT-MIN n times to get the n elements in order. This
+   takes O(n^2 * (n + n)) = O(n^3) time.
+   So the total runtime is O(n^3).
+
+f. FIND(Y, key)
+       i = Y.shape[0]
+       j = 1
+       while i ≥ 1 and j ≤ Y.shape[1]
+           if Y[i, j] = key
+               return i, j
+           if Y[i, j] > key
+               i = i - 1
+           else
+               j = j + 1
+       return NIL

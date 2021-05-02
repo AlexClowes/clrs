@@ -1,0 +1,53 @@
+a. This is similar to the binary heap, but the parent of a node i is
+   PARENT(i) = floor((i - 2) / d) + 1
+   and the jth child of a node i is
+   CHILD(i, j) = d(i - 1) + 1 + j for j = 1, 2, ..., d.
+
+b. floor(log_d(n))
+
+c. EXTRACT-MAX(A)
+       if A.heap-size > 1
+           error "heap underflow"
+       max = A[1]
+       A[1] = A[A.heap-size]
+       A.heap-size = A.heap-size - 1
+       MAX-HEAPIFY(A, 1)
+       return max
+
+   MAX-HEAPIFY(A, i)
+       largest = i
+       for j = 1 up to d
+           if CHILD(i, j) > A.heap-size
+               break
+           if A[CHILD(i, j)] > A[largest]
+               largest = CHILD(i, j)
+       if largest ≠ i
+           exchange A[i] with A[largest]
+           MAX-HEAPIFY(A, largest)
+    
+   The runtime of EXTRACT-MAX(A) is asymptotically the same as the runtime of
+   MAX-HEAPIFY(A, 1). If T(n) is the runtime of MAX-HEAPIFY(A, 1) for n = A.size,
+   then T(n) = O(d) + T(n / d) ⇒ T(n) = O(dlog_d(n)).
+   So the runtime is O(dlog_d(n)) = O(dlog(n)).
+
+d. INSERT(A, key)
+       A.heap-size = A.heap-size + 1
+       i = A.heap-size
+       while i > 1 and A[PARENT(i)] < key
+           A[i] = A[PARENT(i)]
+           i = PARENT(i)
+       A[i] = key
+   
+   There are O(log_d(n)) iterations and each iteration takes constant time. So the
+   total runtime is O(log_d(n)) = O(log(n)).
+
+e. INCREASE-KEY(A, i, key)
+       if key < A[i]
+           error "new key is smaller than current key"
+       while i > 1 and A[PARENT(i)] < key
+           A[i] = A[PARENT(i)]
+           i = PARENT(i)
+       A[i] = key
+   
+   There are O(log_d(n)) iterations each taking constant time. So the total runtime
+   is O(log_d(n)) = O(log(n)).
