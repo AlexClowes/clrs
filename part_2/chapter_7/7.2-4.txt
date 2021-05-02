@@ -1,0 +1,5 @@
+Suppose that "almost sorted" means that the distance between each element's
+initial position in the array and its position after sorting is at most c for
+some constant c.
+The the runtime of insertion sort is O(cn) = O(n), but PARTITION will result in
+partitions of size n - c and c at best, which leads to Θ(n^2) runtime for QUICKSORT.

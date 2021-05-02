@@ -1,0 +1,7 @@
+Suppose that the input to PARTITION is an array A of n elements all drawn from the
+same distribution so that the final position of the pivot element is equally likely
+to be any of A[1], A[2], ..., A[n]. If the final position of the pivot is A[j],
+then the partition is more balanced than α to (1 - α) if αn < j < (1 - α)n.
+P(αn < j < (1 - α)n) = P(j < (1 - α)n) - P(j ≤ αn)
+                     = floor((1 - α)n) / n - ceil(αn) / n
+                     ≈ 1 - 2α.

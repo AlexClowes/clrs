@@ -1,0 +1,4 @@
+When A is sorted in decreasing order, the pivot element is less than all other
+elements, so PARTITION results in partitions of size 0 and n - 1. Also, the
+partitions will remain sorted in decreasing order.
+So the running time recurrence if T(n) = T(n - 1) + Θ(n) ⇒ T(n) = Θ(n^2).

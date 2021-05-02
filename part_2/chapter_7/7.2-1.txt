@@ -1,0 +1,16 @@
+T(n) = T(n - 1) + O(n) ⇔ ∃ c s.t. T(n) < T(n - 1) + cn
+Suppose ∀ m < n T(m) < cm^2. Then
+T(n) < T(n - 1) + cn
+     < c(n - 1)^ + cn
+     = cn^2 - cn + c
+     ≤ cn^2
+So by induction T(n) = O(n^2).
+
+T(n) = T(n - 1) + Ω(n) ⇔ ∃ c s.t. T(n) > T(n - 1) + cn
+Suppose ∀ m < n T(m) > cm^2 + cm. Then
+T(n) > T(n - 1) + cn
+     > c(n - 1)^2 + c(n - 1) + cn
+     = cn^2
+So by induction T(n) = Ω(n^2).
+
+∴ T(n) = Θ(n^2).

@@ -1,0 +1,2 @@
+When all elements are the same, the running time has recurrence
+T(n) = T(n - 1) + Θ(n) ⇒ T(n) = Θ(n^2).

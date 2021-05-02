@@ -1,0 +1,12 @@
+T(n) = αT(αn) + (1 - α)T((1 - α)n)
+     = α^2T(α^2n) + 2α(1 - α)T(α(1 - α)n) + (1 - α)^2T((1 - α)^2n)
+     ...
+     = α^rT(α^rn) + ... + (1 - α^2)^rT((1 - α)^rn)
+     ...
+
+0 < α ≤ 1/2 ⇒ α ≤ 1 - α, so the minimum depth of a leaf corresponds to the value
+of r such that T(α^rn) = T(1) (ignoring integer round-off).
+α^rn = 1 ⇒ r = -log(n) / log(α)
+
+Similarly, the maximum depth of a leaf is r such that
+(1 - α)^rn = 1 ⇒ r = -log(n) / log(1 - α).
