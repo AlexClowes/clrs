@@ -1,0 +1,15 @@
+If all elements of A[p .. r] have the same value, PARTITION returns r.
+
+When A[j] = x, only swap half of the time.
+PARTITION(A, p, r)
+    x = A[r]
+    i = p - 1
+    swap_on_equal = true
+    for j = p to r - 1
+        if A[j] < x or (A[j] = x and swap_on_equal)
+            i = i + 1
+            exchange A[i] with A[j]
+        if A[j] = x
+            swap_on_equal = not swap_on_equal
+    exchange A[i + 1] with A[r]
+    return i + 1

@@ -1,0 +1,4 @@
+A constant number of operations are executed outside the for loop. The body of
+the for loop is executed r - p times, and has constant upper and lower
+bounds on the number of operations required. So the total runtime is
+Θ(r - p) + Θ(1) = Θ(n).
