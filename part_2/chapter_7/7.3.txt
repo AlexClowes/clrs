@@ -1,0 +1,25 @@
+a. We randomly choose a pivot from an array of n elements. Each element is equally
+   likely to be chosen, so the probability of any particular element being chosen
+   is 1 / n.
+   E[X_i] = P(X_i) = 1 / n.
+
+b. E[T(n)] = E[E[T(n)|X_q]]
+           = E[E[T(q - 1) + T(n - q) + Θ(n)]]
+           = Σ_{q=1}^n P(X_q)E[T(q - 1) + T(n - q) + Θ(n)]
+           = E[Σ_{q=1}^n X_q * (T(q - 1) + T(n - q) + Θ(n))]
+
+c. E[T(n)] = Σ_{q=1}^n E[T(q - 1)] / n + Σ_{q=1}^n E[T(n - q)] / n + Θ(n)
+           = 2 / n * Σ_{q=0}^{n-1} E[T(q)] + Θ(n)
+   T(0) = T(1) = 0 ⇒ E[T(n)] = 2 / n * Σ_{q=2}^{n-1} E[T(q)] + Θ(n)
+
+d. Σ_{k=2}^n-1 klg(k) < ∫_2^n xlg(x) dx = n^2lg(n) / 2 - n^2 / 4log(2) - 2 + 1/log(2)
+                                        < n^2lg(n) / 2 - n^2 / 8
+   
+e. Suppose ∀ m < n T(m) ≤ amlg(m). Then
+   E[T(n)] = 2 / n * Σ_{q=2}^{n-1} E[T(q)] + Θ(n)
+           ≤ 2 / n * Σ_{q=2}^{n-1} aqlg(q) + Θ(n)
+           < 2a / n * (n^2lg(n) / 2 - n^2 / 8) + Θ(n)
+           = anlg(n) - an / 4 + Θ(n)
+           ≤ anlg(n)
+   if we choose a sufficiently large.
+   So E[T(n)] = O(nlog(n)).

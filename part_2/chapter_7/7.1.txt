@@ -1,0 +1,37 @@
+a. x = 13, p = 1, r = 12 throughout.
+   A                                     i  j
+   13 19  9  5 12  8  7  4 11  2  6 21   0 13
+    6 19  9  5 12  8  7  4 11  2 13 21   1 11
+    6  2  9  5 12  8  7  4 11 19 13 21   2 10
+    6  2  9  5 12  8  7  4 11 19 13 21  10  9
+
+b. On the first iteration of the while loop, x = A[p] we set i = p and p ≤ j ≤ r.
+   For any other iteration, initially we have p ≤ i < j ≤ r, A[i] ≤ x, A[j] ≤ x.
+   So at the end of an iteration, the new value of i is ≤ the initial value of j,
+   and the new value of j is ≥ the initial value of i.
+   So we never have i, j < p or i, j > r, and hence never access elements outside
+   of the subarray A[p .. r]. 
+
+c. At the end of the first loop, i = p < j = r, so we do not terminate. On
+   successive loops, p ≤ j (see above) and clearly j < r.
+
+d. Loop invariant: Every element of A[p .. i] is ≤ x and every element of A[j .. r]
+                   is ≥ x.
+   Initialisation is trivial to show, because A[p .. p - 1] and A[r + 1 .. r] are
+   empty.
+   Suppose this is true at the start of an iteration. We decrement j until we find
+   an element A[j] ≤ x, so that every element of A[j + 1 .. r] is ≥ x. Then we
+   increment i until we find an element A[i] ≥ x, so that every element of
+   A[p .. i - 1] is ≤ x. If i < j, then we swap A[i] and A[j], so now the loop
+   invariant holds. If i ≥ j, we terminate.
+   On termination, we have every element of A[p .. i - 1] ≤ x, every element of
+   A[j + 1 .. r] ≥ x, i ≥ j, and A[j] ≤ x ≤ A[i]. If i = j, then every element of
+   A[p .. j] is ≤ x, and every element of A[j + 1 .. r] is ≥ x. If i > j, then
+   A[p .. j] ⊆ A[p .. i - 1] ⇒ every element of A[p .. j] is ≤ x and still every
+   element of A[j + 1 .. r] is ≥ x.
+
+e. QUICKSORT(A, p, r)
+       if p < r
+           q = HOARE-PARTITION(A, p, r)
+           QUICKSORT(A, p, q)
+           QUICKSORT(A, q + 1, r)

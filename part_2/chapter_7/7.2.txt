@@ -1,0 +1,30 @@
+a. With all element values equal, the runtime obeys the recurrence
+   T(n) = T(n - 1) + Θ(n) ⇒ T(n) = Θ(n^2).
+
+b. PARTITION'(A, p, r)
+       x = A[r]
+       i = j = p - 1
+       for k = p to r
+           if A[k] ≤ x
+               if A[k] < x
+                   i = i + 1
+                   exchange A[i] with A[k]
+               j = j + 1
+               exchange A[j] with A[k]
+       return i + 1, j
+
+c. RANDOMIZED-PARTITION'(A, p, r)
+       i = RANDOM(p, r)
+       exchange A[r] with A[i]
+       return PARTITION'(A, p, r)
+
+   RANDOMIZED-QUICKSORT'(A, p, r)
+       if p < r
+           q, t = RANDOMIZED-PARTITION'(A, p, r)
+           RANDOMIZED-QUICKSORT'(A, p, q - 1)
+           RANDOMIZED-QUICKSORT'(A, t + 1, r)
+
+d. The analysis is similar to that in section 7.4.2, but the probability that
+   elements z_i and z_j are compared is now smaller, since identical elements
+   are less likely to be compared to one another using RANDOMIZED-QUICKSORT'.
+   This still means that E[T(n)] = O(nlog(n)), since this is just an upper bound.
