@@ -1,0 +1,7 @@
+Suppose ∃ c > 0 ∀ m < n T(m) < cm^2. Then
+T(n) = max{0≤q≤n-1}(T(q) + T(n - q - 1)) + Θ(n)
+     ≥ c(n - 1)^2 + Θ(n)
+     = cn^2 - 2cn + c + Θ(n)
+     ≥ cn^2
+by choosing c sufficiently large.
+So T(n) < cn^2 ∀ n ⇒ T(n) = Ω(n^2).

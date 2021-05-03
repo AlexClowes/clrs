@@ -1,0 +1,14 @@
+If we do not sort subarrays with fewer than k elements, the depth of the recursion
+tree is reduced to O(log(n) - log(k)) = O(log(n / k)). We still do Θ(n) work to
+partition each subarray, so the runtime becomes O(nlog(n / k)).
+Sorting the small subarrays with insertion sort takes O(nk) time (see 7.2-4), so
+the total sorting time is O(nk + nlog(n / k)).
+
+Suppose the runtime is bounded by cnk + dnlog(n / k) for some constants c, d.
+This is minimised for fixed n by choosing k s.t.
+   d/dk (cnk + dnlog(n / k)) = 0
+⇒  cn - dn/k = 0
+⇒  k = d / c.
+
+In reality, we should just try different values of k with typical inputs to find
+the best value.

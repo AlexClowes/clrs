@@ -1,0 +1,10 @@
+As in the text, the expected runtime is Θ(n + E[X]), where
+E[X] = 2Σ_{i=1}^{n-1}Σ_{j=1}^{n-i}1/(j+1).
+
+Σ_{j=1}^{n-i}1/(j+1) = -1 + H_{n+1-i} where H_n is the nth harmonic number
+                     > -1 + log(n + 2 - i)
+So E[X] > 2Σ_{i=1}^{n-1}(log(n + 2 - i) - 1)
+        = 2Σ_{i=3}^{n+1}log(i) - 2(n - 1)
+        = 2log((n+1)!) - 2(n - 1) - 2log(2)
+        = O(nlog(n)).
+So the expected runtime is Ω(nlog(n)).

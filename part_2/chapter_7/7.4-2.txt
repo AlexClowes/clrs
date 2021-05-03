@@ -1,0 +1,4 @@
+In the best case, the running time T(n) satisfies the recurrence relation
+T(n) = 2T(n / 2) + Θ(n).
+So by the Master Theorem,
+T(n) = Θ(nlog(n)).
