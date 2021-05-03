@@ -1,0 +1,5 @@
+For a randomised algorithm, there is no input that always causes the worst-case
+behaviour. Instead, the worst-case behaviour could happen for any input, but with
+a very low probability (approaching zero as n → ∞).
+Instead we care about the expected runtime, which is likely to be similar to the
+actual runtime in a real-world situation with diverse inputs.
