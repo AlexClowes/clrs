@@ -1,0 +1,11 @@
+lg(n!) = Σ_{k=1}^n lg(k)
+       ≤ Σ_{k=1}^n lg(n)
+       = nlg(n)
+
+lg(n!) = Σ_{k=1}^n lg(k)
+       = 1/2 * Σ_{k=1}^n (lg(k) + lg(n - k + 1))
+       = 1/2 * Σ_{k=1}^n lg(k(n - k + 1))
+       ≥ 1/2 * Σ_{k=1}^n lg(n)
+       = nlg(n) / 2
+
+So nlg(n) / 2 ≤ lg(n!) ≤ nlg(n) ⇒ lg(n!) = Θ(nlg(n)).

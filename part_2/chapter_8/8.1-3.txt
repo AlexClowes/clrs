@@ -1,0 +1,10 @@
+Suppose this is possible. Then ∃ c s.t. ∀ n there are at least n! / 2 leaves with
+height at most cn. A binary tree of height h has at most 2^h leaves, so we must
+have ∀ n n! / 2 ≤ 2^(cn) ⇒ Θ(nlg(n)) ≤ cn. Contradiction.
+
+For a fraction f(n) of the inputs to have linear running time, there must be
+some constant c s.t. ∀ n f(n)n! ≤ 2^(cn) ⇒ lg(n!) + lg(f(n)) ≤ cn
+                                         ⇒ lg(n!) + lg(f(n)) = O(n).
+f(n) = 1 / n ⇒ lg(n!) + lg(f(n)) = lg(n!) - lg(n) = Θ(nlg(n)).
+f(n) = 2^n ⇒ lg(n!) + lg(f(n)) = lg(n!) - n = Θ(nlg(n)).
+So neither of these work.

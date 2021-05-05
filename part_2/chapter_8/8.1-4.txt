@@ -1,0 +1,3 @@
+The decision tree corresponding to this problem has (k!)^(n/k) leaves, so the
+height h of the tree must be such that
+(k!)^(n / k) ≤ 2^h ⇒ h ≥ (n / k) * lg(k!) = Ω(nlg(k)).
