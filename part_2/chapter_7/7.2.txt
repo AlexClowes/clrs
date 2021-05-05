@@ -9,8 +9,9 @@ b. PARTITION'(A, p, r)
                if A[k] < x
                    i = i + 1
                    exchange A[i] with A[k]
-               j = j + 1
-               exchange A[j] with A[k]
+               else
+                   j = j + 1
+                   exchange A[j] with A[k]
        return i + 1, j
 
 c. RANDOMIZED-PARTITION'(A, p, r)
