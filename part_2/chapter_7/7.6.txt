@@ -1,0 +1,37 @@
+a. Use the quicksort with equal element values from problem 7.2, combined with
+   the definition of ≤ for intervals. Changes need only be made in the partition
+   function.
+
+   FUZZY-PARTITION(A, p, r)
+       x = A[r]
+       i = j = p - 1
+       for k = p to r
+           if A[k].a ≤ x.b
+               // A[k] ≤ x, using definition of ≤ for intervals
+               if A[k].b < x.a
+                   // partitions do not overlap
+                   i = i + 1
+                   exchange A[i] with A[k]
+               else
+                   // partitions do overlap, treat as equivalent
+                   j = j + 1
+                   exchange A[j] with A[k]
+       return i + 1, j
+   
+   RANDOMIZED-FUZZY-PARTITION(A, p, r)
+       i = RANDOM(p, r)
+       exchange A[r] with A[i]
+       FUZZY-PARTITION(A, p, r)
+   
+   RANDOMIZED-FUZZY-QUICKSORT(A, p, r)
+       if p < r
+           q, t = RANDOMIZED-FUZZY-PARTITION(A, p, r)
+           RANDOMIZED-FUZZY-QUICKSORT(A, p, q - 1)
+           RANDOMIZED-FUZZY-QUICKSORT(A, t + 1, r)
+
+b. This is equivalent to randomised quicksort, which Θ(nlog(n)) expected runtime
+   for general inputs.
+   If all intervals overlap, the call FUZZY-PARTITION(A, 1, n) will return
+   1, n, causing calls RANDOMIZED-FUZZY-QUICKSORT(A, 1, 0) and
+   RANDOMIZED-FUZZY-QUICKSORT(A, n + 1, n) which both terminate immediately.
+   So the runtime is just Θ(n).

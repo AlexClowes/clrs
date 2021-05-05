@@ -1,0 +1,28 @@
+a. If A contains one element, TAIL-RECURSIVE-QUICKSORT correctly sorts it.
+   
+   Suppose ∃ n ∀ k < n TAIL-RECURSIVE-QUICKSORT correctly sorts an array containing
+   k elements. Let A be an array containing n elements.
+   Then callling TAIL-RECURSIVE-QUICKSORT(A, 1, n) first partitions A so that
+   A[i] ≤ A[q] for i = 1, 2, ..., q - 1 and A[q] ≤ A[j] for j = q + 1, q + 2, ..., n.
+   Next, the call TAIL-RECURSIVE-QUICKSORT(A, 1, q - 1) correctly sorts A[1 .. q - 1],
+   since A[1 .. q - 1] has q - 1 < n elements. Now p is set to q + 1, and the
+   remaining steps are equivalent to calling TAIL-RECURSIVE-QUICKSORT(A, q + 1, n),
+   which correctly sorts A[q + 1 .. n] since it has n - q < n elements.
+   So TAIL-RECURSIVE-QUICKSORT will correctly sort an array containing n elements.
+   
+   By induction, TAIL-RECURSIVE-QUICKSORT correctly sorts any finite array A.
+
+b. Suppose the array A is already sorted. Then calls to PARTITION(A, p, r) will
+   always return r, and so there will be n-1 recursive calls
+   TAIL-RECURSIVE-QUICKSORT(A, 1, n), TAIL-RECURSIVE-QUICKSORT(A, 1, n - 1), ..., TAIL-RECURSIVE-QUICKSORT(A, 1, 2)
+   requiring Θ(n) stack space.
+
+c. TAIL-RECURSIVE-QUICKSORT(A, p, r)
+       while p < r
+           q = PARTITION(A, p, r)
+           if q - p ≤ r - q
+               TAIL-RECURSIVE-QUICKSORT(A, p, q - 1)
+               p = q + 1
+           else
+               TAIL-RECURSIVE-QUICKSORT(A, q + 1, r)
+               r = q - 1
