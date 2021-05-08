@@ -1,0 +1,2 @@
+Generate the array C[0 .. k] as in COUNTING-SORT lines 1-8.
+Then the number of elements in the range [a, b] is given by C[b] - C[a-1].

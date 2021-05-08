@@ -1,0 +1,4 @@
+The algorithm still works, since it still places all elements with value i into
+B[C[i-1] + 1 .. C[i]] for i > 0, and elements with value 0 into B[1 .. C[0]].
+The sort is no longer stable, and in fact places elements in the reverse order
+that they appear in A (can we say that this is "anti-stable"?).

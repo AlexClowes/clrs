@@ -1,0 +1,5 @@
+Suppose we have an array A[1 .. n], 1 ≤ i < j ≤ n, A[i] = A[j].
+Then while constructing the array B in COUNTING-SORT, we place A[j] into B at
+position C[A[j]], then immediately decrement C[A[j]]. Later we place A[i] into B
+at position C[A[i]], which must be less than the value of C[A[j]] in the earlier
+iteration. So the sort is stable.
