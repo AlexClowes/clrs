@@ -1,0 +1,9 @@
+Claim: After the nth iteration of radix sort, all elements of the array are
+       sorted by their last n digits.
+
+This is trivially true when n = 1.
+Suppose this is true for n and false for n + 1. Then there are two elements in
+the array which are not sorted by their last n + 1 digits. They must have the
+same digit in the n + 1th place, because we have just sorted by that. Since the
+sort is stable, they are sorted according to their positions in the previous
+iteration, which were sorted by induction. Contradiction.

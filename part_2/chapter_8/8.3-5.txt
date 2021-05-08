@@ -1,0 +1,6 @@
+The machine sorts a single digit on each pass, so in the worst case d passes are
+required.
+
+The operator never needs to keep track of more than 10 piles of cards at once,
+but in the worst case there will be 10d piles of cards in total across all
+passes.

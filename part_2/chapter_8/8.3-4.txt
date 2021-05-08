@@ -1,0 +1,3 @@
+Any number in the range 0, ..., n^3-1 can be expressed as a 3 digit number with
+digits taking values 0, ..., n - 1. So just perform a radix sort with
+d = 3, k = n, which gives a runtime of Θ(3(n + n)) = Θ(n) = O(n).

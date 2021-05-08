@@ -1,0 +1,6 @@
+Insertion sort and merge sort are stable. Heap sort and quick sort are not stable.
+
+Suppose we have an comparison sort that sorts an array A[1 .. n]. This algorithm
+can be made stable by sorting on keys (A[i], i), where we say
+(A[i], i) < (A[j], j]) if A[i] < A[j] or A[i] = A[j] and i < j.
+This has no effect on the asymptotic runtime or memory use of the algorithm.
