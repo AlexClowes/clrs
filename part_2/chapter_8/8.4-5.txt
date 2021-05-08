@@ -1,0 +1,12 @@
+We define x_1 < x_2 < ... < x_n-1 such that
+P(x_1) = P(x_2) - P(x_1) = ... = P(x_n-1) - P(x_n-2) = 1 - P(x_n-1) = 1/n.
+Then we assign X_i to bucket 0 if X_i < x_1, to bucket n-1 if X_i ≥ x_n-1, and to
+bucket j if x_j ≤ X_i < x_j+1 for j = 1, 2, ..., n-2.
+The problem is then equivalent to bucket sort, which runs in Θ(n) average time.
+
+Of course, this assumes we can find the x_j in O(n) time. If we can find x_j
+s.t. |P(x_j ≤ X_i < x_j) - 1/n| < 1/n^3, then we still obtain Θ(n) runtime,
+so it suffices to find approximations to the intervals. If the distribution
+function has compact support, we could use binary search to approximate each
+point in O(log(n)) time, but this would still lead to O(nlog(n)) runtime to find
+all n - 1 points.

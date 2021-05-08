@@ -1,0 +1,5 @@
+In the worst case, all n elements go in the same bucket. This is then equivalent
+to insertion sort, which has Θ(n^2) runtime.
+
+If we replace the insertion sort with merge sort, then the worst-case runtime
+becomes Θ(nlog(n)) instead.

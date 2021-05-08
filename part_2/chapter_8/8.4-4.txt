@@ -1,0 +1,8 @@
+The probability that d_i lies in the range [a, b] is (b^2 - a^2) / π. So we need
+to choose points 0 < r_1 < r_2 < ... < r_n = 1 s.t.
+P(0 ≤ d < r_1) = P(r_1 ≤ d < r_2) = ... = P(r_n-1 ≤ d < r_n) = 1/n.
+This is only possible if r_i = √(iπ/n).
+So we put (x_i, y_i) in bucket j if √(jπ/n) ≤ d < √((j+1)π/n) ⇔ j ≤ nd^2/π < j + 1,
+i.e. put (x_i, y_i) in bucket floor(nd^2 / π).
+This is then equivalent to bucket sort on the unit interval, which has Θ(n) average
+runtime.
