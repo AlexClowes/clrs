@@ -1,0 +1,8 @@
+a. First, we can sort the numbers by their number of digits, using an O(n) sorting
+   method. Then we can split the numbers into groups according to the number of
+   digits that they have, and sort each group using radix sort. Concatenating the
+   sorted groups will return the entire sorted array.
+
+b. Sort the strings into buckets according to their first letters. Then for each
+   bucket, further sort the strings according to their second letters, and continue
+   to recurse in this fashion.

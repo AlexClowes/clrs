@@ -1,0 +1,27 @@
+a. There are nCr(2n, n) = (2n)! / (n!)^2 ways to divide a list of 2n numbers into
+   two sorted lists of n numbers.
+
+b. Any algorithm to merge two sorted lists of n elements has a corresponding
+   binary decision tree with at least nCr(2n, n) leaves and height h. If the
+   tree has height h, then
+     2^h ≥ l ≥ (2n)! / (n!)^2
+   ⇒ h ≥ lg((2n)!) - 2lg(n!)
+       ~ 1 + lg(nπ)/2 + 2nlg(2n) - 2nlg(e) - 2(1/2 + lg(nπ)/2 + nlg(n) - nlg(e))
+       = 2n - lg(nπ)/2
+       = 2n - o(n)
+   So the algorithm must perform at least 2n - o(n) comparisons.
+
+c. Suppose we have two elements x and y. We can establish the relative positions
+   of x and y in the final sorted order by:
+   i.   Comparing them to one another.
+   ii.  If x and y are in the same list, their relative order in that list will
+        be the same in the final sorted order.
+   iii. If ∃ z s.t. x < z < y or x > z > y, we could compare x to z and y to z
+        and infer that x < y or y < x.
+   If x and y are in different lists and appear consecutively in the final sorted
+   order, only i. is possible, and we must compare x and y.
+
+d. It is possible that we could have lists [x1, x2, ..., xn] and [y1, y2, ..., yn]
+   with final sorted order [x1, y1, x2, y2, ..., xn, yn]. Then by d. we must
+   compare xi with yi for i = 1, 2, ..., n and compare yi with yi+1 for
+   i = 1, 2, ..., n - 1. So at least n + n - 1 = 2n - 1 comparisons are required.

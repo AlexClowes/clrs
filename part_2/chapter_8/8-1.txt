@@ -1,0 +1,47 @@
+a. There are n! possible permutations of n distinct elements, all of which are
+   equally likely. So there should be n! leaves each with probability 1/n!. Any
+   extra leaves must have probability 0.
+
+b. Consider a leaf in LT or RT. Its depth in LT or RT is one less than its depth in
+   T. So the sum of the depths of all leaves in T is 1 * k = k more than the sums
+   of the depths in LT and RT.
+   i.e. D(T) = D(LT) + D(RT) + k.
+
+c. Suppose ∃ i s.t. 1 ≤ i ≤ k - 1 and d(k) > d(i) + d(k - i) + k. Then we can find
+   trees with i and k - i leaves and external path lengths d(i) and d(k - i), and
+   join them to form a tree with k leaves and external path length less than d(k).
+   This is a contradiction, so no such i exists.
+   So d(k) ≤ min_{1≤i<k}(d(i) + d(k - i) + k).
+   
+   Let T be a tree with k > 1 leaves s.t. D(T) = d(k). This exists by the
+   definition of d. Let LT and RT be the left and right subtrees of T respectively,
+   and let the number of leaves in LT be i0. Then
+   d(k) = D(T) = D(LT) + D(RT) + k ≥ d(i0) + d(k - i0) + k
+   by question b and the definition of d. By the previous paragraph, we must have
+   d(k) = d(i0) + d(k - i0) + k
+   and hence d(k) = min_{1≤i<k}(d(i) + d(k - i) + k).
+
+d. Differentiating with respect to i,
+     d/di (ilg(i) + (k - i)lg(k - i)) = 0
+   ⇒ lg(i / (k - i)) = 0
+   ⇒ i = k / 2.
+   Differentiating again,
+   d/di (lg(i / (k - i))) = k / (log(2)i(k-i)).
+   Substituting i = k / 2 gives
+   k / (log(2)k^2/4) = 4 / (log(2)k) > 0
+   so there is a minimum at i = k / 2.
+
+e. Suppose ∀ m < n d(m) ≥ mlg(m).
+   Then d(n) = min_{1≤i<n}(d(i) + d(n - i) + n)
+             ≥ min_{1≤i<n}(ilg(i) + (n - i)lg(n - i) + n)
+             ≥ nlg(n).
+   So by induction d(n) = Ω(nlg(n)).
+   T_A has n! leaves, so D(T_A) ≥ d(n!) = Ω(n!lg(n!)).
+   The average case time to sort n elements is D(T_A) / n! = Ω(lg(n!)) = Ω(nlg(n)).
+
+f. For every randomised comparison sort B, there is a collection of
+   deterministic comparison sorts S s.t. B is equivalent to randomly choosing
+   a sort from S and using it. So if T_B is the runtime of B,
+   E[T_B] = Σ_{A∈ S} P(choose A)E[T_A].
+   The set S must be finite, so there must be A∈ S with minimal expected runtime,
+   and E[T_B] ≥ E[T_A].

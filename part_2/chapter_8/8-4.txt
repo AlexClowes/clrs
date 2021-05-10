@@ -1,0 +1,20 @@
+a. Choose a red jug, and compare it to each blue jug until we find one with the same
+   volume. We have now found a pair of jugs with the same volume. Repeat this for
+   each red jug until we have found all pairs.
+
+b. We can express any algorithm that uses comparisons to solve this problem as a
+   decision tree, where each internal node corresponds to a comparison and each
+   leaf corresponds to a possible grouping.
+   The are n! possible groupings, and each internal node must have three children,
+   corresponding to the three outcomes of the comparison. So if h is the height
+   of the decision tree and l is the number of leaves,
+   n! ≤ l ≤ 3^h ⇒ h ≥ log3(n!) = Ω(nlog(n)).
+
+c. Pick a random red jug, and compare every blue jug to it. This will allow us
+   to partition the blue jugs into those smaller and larger than the red jug, and
+   also find the blue jug with the same volume as the red jug. We can then use
+   the blue jug with the same volume to partition all the other red jugs. We have
+   now reduced the problem to finding pairs from two sets of jugs, in a manner
+   analgous to quicksort.
+   The expected and worst-case runtimes are then O(nlog(n)) and O(n^2) respectively,
+   as with quicksort.

@@ -1,0 +1,74 @@
+a. By definition, A[p] is the smallest value in A in the wrong location, and A[q]
+   is a value in A in the wrong location. So A[p] ≤ A[q]. If A[q] = A[p], then
+   A[q] is in the correct position, a contradiction.
+   So A[p] < A[q] ⇒ B[q] = 1.
+   Trivially B[p] = 0.
+
+b. A[i] ≤ A[j] ≤ A[p] ⇒ B[i] = B[j] = 0 ⇒ B[i] ≤ B[j]
+   A[i] ≤ A[p] < A[j] ⇒ B[i] = 0, B[j] = 1 ⇒  B[i] ≤ B[j]
+   A[p] < A[i] ≤ A[j] ⇒ B[i] = B[j] = 1 ⇒ B[i] ≤ B[j]
+   So A[i] ≤ A[j] ⇒ B[i] ≤ B[j].
+   This means that COMPARE-EXCHANGE(A, i, j) swaps elements A[i] and A[j] iff
+   COMPARE-EXCHANGE(B, i, j) swaps elements B[i] and B[j]. So algorithm X makes
+   the same swaps on array B as on array A.
+   We have B[p] = 0 and B[q] = 1. By definition, q > p, so we have B[p] < B[q]
+   and p > q, i.e. algorithm X has failed to sort B correctly.
+
+c. Only the steps which sort the columns could possibly depend on the values in
+   the array. If we use an oblivious sorting method, e.g. insertion sort, then
+   the entire algorithm is oblivious.
+
+d. For j = 1, 2, ..., s, say column j has z_j zeros and r - z_j ones.
+   After step 1 these will be sorted, so that column j consists of z_j zeros
+   followed by r - z_j ones.
+   After step 2, the z_j zeros from old column j are distributed across the s
+   new columns so that there are floor(z_j / s) + 1 zeros in the first z_j % s
+   new columns, and floor(z_j / s) zeros in the remaining new columns. So every
+   new column ends up with at least Σ_{j=1}^s floor(z_j / s) zeros.
+   After step 3, all the zeros in each column are moved to the top, so now the
+   first Σ_{j=1}^s floor(z_j / s) rows contain only zeros.
+   Similarly the last Σ_{j=1}^s floor((r - z_j) / s) rows contain only ones
+   after step 3.
+
+     floor(z_j / s) + floor((r - z_j) / s) ≥ r / s - 1
+   ⇒ r - Σ_{j=1}^s floor(z_j / s) - Σ_{j=1}^s floor((r - z_j) / s)
+     ≤ r - s(r / s - 1)
+     = s
+   So after step 3 we have some clean rows of zeros at the top, some clean rows
+   of ones at the bottom, and no more than s dirty rows in the middle.
+
+e. After step 4, reading in column major order, we start with a clean area of
+   zeros, and end with a clean area of ones (see question d.). In the middle,
+   we have a dirty area corresponding to the s dirty rows at the end of step 3,
+   which contains at most s * s = s^2 elements.
+
+f. r ≥ 2s^2, so the dirty area is entirely contained in at most two columns. All
+   columns to the left contain only zeros, and all columns to  the right contain
+   only ones.
+   
+   Suppose the dirty area is contained in a single column.
+   After step 5, the single dirty column is sorted. All columns to the left
+   contain only zeros, and all columns to the right contain only ones. So the
+   sorting is complete. Steps 6, 7, and 8 will have no effect, so we have a
+   fully sorted output.
+
+   Suppose the dirty area spans two columns. Because r ≥ 2s^2, the dirty area
+   is fully contained in the bottom half of the first column and the top half
+   of the second column. After step 6, these two halves will be moved into the
+   same column. Step 7 will sort the single dirty column, and after step 8 we
+   have a fully sorted output.
+
+   So column sort works on arbitrary inputs by the 0-1 sorting lemma.
+
+g. If s does not divide r, then the number of dirty rows after step 3 is
+   r - Σ_{j=1}^s floor(z_j / s) - Σ_{j=1}^s floor((r - z_j) / s)
+   ≤ r - s(floor(r / s) - 1)
+   = s + (r - sfloor(r / s))
+   ≤ s + s - 1
+   = 2s - 1.
+   So there are at most 2s - 1 dirty rows.
+   This leads to a dirty area of at most s(2s - 1) elements, and so we require
+   r ≥ 2s(2s - 1) = 4s^2 - 2s for column sort to work.
+
+h. If s does not divide r, we can just add rows of -∞ until it does, then
+   remove the extra -∞ values from the beginning of the sorted output.

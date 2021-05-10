@@ -1,0 +1,30 @@
+a. Counting sort is stable and runs in O(n) time.
+
+b. The partition function from quicksort sorts in place in O(n) time.
+
+c. Insertion sort is stable and sorts in place.
+
+d. Counting sort can be used with radix sort, as in the text.
+   The partition function is not a stable sort, so cannot be used as part of a
+   radix sort.
+   Insertion sort runs in O(n^2) time, so could not be used with radix sort to
+   obtain O(bn) runtime.
+
+e. IN-PLACE-COUNTING-SORT(A, k)
+       let C[0 .. k] be a new array
+       for i = 0 to k
+           C[i] = 0
+       for j = 1 to A.length
+           C[A[j]] = C[A[j]] + 1
+       // C[i] now contains the number of elements equal to i
+       for i = 1 to k
+           C[i] = C[i] + C[i - 1]
+       // C[i] now contains the number of elements less than or equal to i
+       let B[0 .. k] be a new array
+       B[0] = 0
+       for i = 1 to k - 1
+           B[i] = C[i + 1]
+       for j = 1 to A.length
+           while C[A[j]] > B[A[j]]
+               C[A[j]] = C[A[j]] - 1
+               exchange A[j] with A[C[A[j]] + 1]

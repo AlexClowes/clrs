@@ -1,0 +1,20 @@
+a. An array is 1-sorted iff it is sorted.
+
+b. 1, 3, 2, 4, 5, 6, 7, 8, 9, 10.
+
+c. A is k-sorted ⇔  Σ_{j=i}^{i+k-1} A[j] ≤ Σ_{j=i+1}^{i+k} A[j]
+                 ⇔  A[i] ≤ A[i+k]
+
+d. An array A is k-sorted if the subarrays
+   A[1, k + 1, 2k + 1, ...], A[2, k + 2, ...], ..., A[k, 2k, ...]
+   are each sorted. So to k-sort an array, use merge sort (or any other O(nlog(n))
+   sort) on each of these subarrays. Each subarray is sorted in O((n/k)log(n/k))
+   time, and there are k subarrays, so the total time is O(nlog(n / k)).
+
+e. By problem 6.5-9, we can merge k sorted lists in O(nlog(k)) time. Given a
+   k-sorted array A, the k subarrays A[1, k + 1, ...], ..., A[k, 2k, ...] are
+   all sorted, so we can merge them in O(nlog(k)) time to form a sorted array.
+
+f. Let T(n) be the time to k-sort an array of n elements, and S(n) be the time
+   to sort an array of n elements. Then ∃ c > 0 S(n) ≤ T(n) + cnlog(k), and
+   S(n) = Ω(nlog(n)). So T(n) = Ω(nlog(n)).
