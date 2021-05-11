@@ -1,0 +1,7 @@
+Suppose RANDOMIZED-SELECT does make a recursive call to a 0-length array. Then
+either
+i < k and q - 1 < p ⇒ k = q - p + 1 < 2 ⇒ i < 1
+or
+i > k and r < q + 1 ⇒ k = q - p + 1 = q + n - r > n - 1 ⇒ i > n.
+
+But we must have 1 ≤ i ≤ n, so neither situtation is possible.

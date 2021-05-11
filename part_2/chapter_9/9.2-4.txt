@@ -1,0 +1,2 @@
+The worst case is that we always choose the maximum value as the partition,
+i.e. we choose 9, 8, 7, 6, 5, 4, 3, 2, 1, 0.

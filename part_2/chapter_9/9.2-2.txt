@@ -1,0 +1,6 @@
+X_k is an indicator random variable for the event that the partition element
+chosen from A[p .. r] is the kth largest element of A[p .. r].
+T(max(k - 1, n - k)) is the running time to find the ith order statistic if it
+is contained in the larger of the two sub arrays A[p .. q - 1] and A[q + 1 .. r],
+where q is the kth largest element of A[p .. r]. This is not dependent on the
+choice of partition element, so the two random variables are independent.
