@@ -1,0 +1,14 @@
+Let T(n) be the number of comparisons required to find the minimum and maximum
+of a set of n elements. Clearly T(1) = 0.
+
+Suppose we have the minima and maxima of two disjoint sets A and B. Then it will
+take two comparisons to find the minimum and maximum of A ∪ B.
+So T(n) = 2 + T(k) + T(n - k) for k = 1, 2, ..., n - 1.
+
+Clearly T(1) = 0 ≥ ceil(3/2) - 2 = 0
+
+Suppose ∀ m < n T(m) ≥ ceil(3n / 2) - 2. Then
+T(n) = 2 + T(k) + T(n - k)
+     ≥ ceil(3k / 2) + ceil(3(n - k) / 2) - 2
+     ≥ ceil(3n / 2) - 2
+So T(n) ≥ ceil(3n / 2) - 2 ∀ n.

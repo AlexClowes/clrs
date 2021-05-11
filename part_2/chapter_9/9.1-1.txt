@@ -1,0 +1,8 @@
+The minimum element of an array A[1 .. n] can be computed by repeatedly dividing
+the array into disjoing pairs, comparing each pair, and taking the smaller element
+from each. After n - 1 comparisons, this will find the minimum element. The second
+smallest element will be among the ceil(lg(n)) element that were compared to the
+minimum, so we can find this with a further ceil(lg(n)) comparisons.
+
+This leaves a total of n + ceil(lg(n)) - 2 comparisons to find the second smallest
+element.
