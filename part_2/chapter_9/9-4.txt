@@ -1,0 +1,31 @@
+a. Let Z_ij = {z_i, z_{i+1}, ..., z_j}.
+   
+   If i ≤ k < j, E[X_ijk] = P(X_ijk)
+                          = P(z_i or z_j is first partition element chosen from Z_ij)
+                          = 2 / (j - i + 1).
+   If k ≤ i < j, E[X_ijk] = P(X_ijk)
+                          = P(z_i or z_j is first partition element chosen from Z_kj)
+                          = 2 / (j - k + 1).
+   If i < j ≤ k, E[X_ijk] = P(X_ijk)
+                          = P(z_i or z_j is first partition element chosen from Z_ik)
+                          = 2 / (k - i + 1).
+
+b. E[X_k] = E[Σ_{i=1}^{n-1}Σ_{j=i+1}^n X_ijk]
+          = Σ_{i=1}^kΣ_{j=i+1}^{k-1}E[X_ijk]
+            + Σ_{i=1}^kΣ_{j=k}^nE[X_ijk]
+            + Σ_{i=k+1}^{n-1}Σ_{j=i+1}^nE[X_ijk]
+          = Σ_{i=1}^{k-2}Σ_{j=i+1}^{k-1} 2 / (k - i + 1)
+            + Σ_{i=1}^{k-1}Σ_{j=k}^n 2 / (j - i + 1)
+            + Σ_{i=k+1}^{n-1}Σ_{j=i+1}^n 2 / (j - k + 1)
+          ≤ Σ_{i=1}^kΣ_{j=k}^n 2 / (j - i + 1)
+            + Σ_{j=k+1}^n 2(j - k - 1) / (j - k + 1)
+            + Σ_{i=1}^{k-2} 2(k - i - 1) / (k - i + 1)
+
+c. Σ_{i=1}^kΣ_{j=k}^n 2 / (j - i + 1) ≤ 2n
+   Σ_{j=k+1}^n 2(j - k - 1) / (j - k + 1) ≤ 2(n - k)
+   Σ_{i=1}^{k-2} 2(k - i - 1) / (k - i + 1) ≤ 2(k - 2)
+   ∴ E[X_k] ≤ 2n + 2(n - k) + 2(k - 2) = 4n - 2 < 4n.
+
+d. RANDOMIZED-SELECT(A, 1, n, k) has runtime proportional to the number of
+   comparisons made. So the expected runtime is proportional to E[X_k] ≤ 4n.
+   ∴ The expected runtime is O(n).

@@ -1,0 +1,41 @@
+a. Say wlog that the x_i are sorted, i.e. x_1 ≤ x_2 ≤ ... ≤ x_n. Then the median
+   is x_floor((n + 1) / 2).
+   If we use weights w_i = 1/n for i = 1, 2, ..., n, then the weighted median is
+   x_k where k is the smallest integer s.t.
+   Σ_{i=1}^k w_i ≥ 1/2 ⇒ k / n ≥ 1/2 ⇒ k ≥ n / 2
+   i.e. k = ceil(n / 2) = floor((n + 1) / 2).
+
+b. Assume we have access to an algorithm SORT that sorts n elements in
+   O(nlog(n)) time. The following runs in O(nlog(n)) + O(n) = O(nlog(n)) time.
+   WEIGHTED-MEDIAN(A, W, n)
+       SORT(A, n)
+       sum = 0
+       for i = 1 to n
+           sum = sum + W[i]
+           if sum ≥ 1/2
+               return A[i]
+
+c. Assume we have access to an algorithm SELECT that finds the ith order
+   statistic of n numbers in O(n) time.
+   First, find the median of the n numbers, and partition the numbers using the
+   median as the partiton element.
+   Now compute the sum of the weights of the left and right partitions. If a
+   partition's total weight is ≥ 1/2, then recurse on that partition. If both
+   partitions have total weight < 1/2, then the partition element is the
+   weighted median and we are done.
+
+   The total runtime is T(n), where T(n) ≤ O(n) + T(n/2) ⇒ T(n) = O(n).
+
+d. Let L(p) = Σ_{i=1}^n w_i * |p - p_i|, and assume wlog the p_i are sorted,
+   i.e. p_1 < p_2 < ... < p_n.
+   Then for p ∈ (p_j, p_{j+1}),
+   L(p) = Σ_{i=1}^j w_i(p - p_i) - Σ_{i=j+1}^n w_i(p - p_i)
+   ⇒ dL/dp = Σ_{i=1}^j w_i - Σ_{i=j+1}^n w_i
+           = 1 - 2Σ_{i=j+1}^n w_i
+   L is continuous, so we have a minimum at p_j where dL/dp ≤ 0 for
+   p ∈ (p_{j-1}, p_j) and dL/dp ≥ 0 for p ∈ (p_j, p_{j+1}), i.e.
+   Σ_{i=j}^n w_i ≥ 1/2 and Σ_{i=j+1}^n w_i ≤ 1/2.
+   But this is the definition of the weighted median.
+
+e. The best solution is (x_m, y_m), where x_m and y_m are the weighted medians
+   of the x_i and y_i respectively.

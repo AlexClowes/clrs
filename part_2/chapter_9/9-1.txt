@@ -1,0 +1,8 @@
+a. Sorting takes O(nlog(n)) time, listing i numbers takes O(i) time. So the
+   total runtime is O(nlog(n) + i).
+
+b. Building the max-priority queue takes O(n) time, and each call to EXTRACT-MAX
+   takes O(log(n)) time. The total time is thus O(n + ilog(n)).
+
+c. Finding the ith largest number takes O(n) time, partitioning takes O(n) time,
+   and sorting i numbers takes O(ilog(i)) time. The total time is O(n + ilog(i)).

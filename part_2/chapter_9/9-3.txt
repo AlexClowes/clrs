@@ -1,0 +1,24 @@
+a. If i ≥ n/2, just use the normal SELECT algorithm, which takes T(n)
+   comparisons. Otherwise, split the elements into floor(n/2) pairs, and let
+   [m_1, m_2, ..., m_{ceil(n/2)}] be the smaller elements from each pair (and
+   the single leftover element if n is odd), and let [M_1, ..., M_{floor(n/2)}]
+   be the larger elements from each pair. This takes floor(n/2) comparisons.
+   Next, find the ith smallest element from the m_j, which takes U_i(ceil(n/2))
+   comparisons. Now the ith smallest element is one of the i smallest m_j, or it
+   is one of the i smallest M_j. So find the ith smallest element from among
+   these elements, which takes T(2i) comparisons.
+   So for i < n/2, U_i(n) = floor(n/2) + U_i(ceil(n/2)) + T(2i).
+
+b. i < n / 2 ⇒ U_i(n) = floor(n/2) + U_i(ceil(n/2)) + T(2i).
+   If i ≥ ceil(n/2)/2, then U_i(
+   i ≥ ceil(n/2)/2 ⇒ U_i(n) = floor(n/2) + T(ceil(n/2)) + T(2i)
+                            ≤ n/2 + 2T(2i)
+                            = n + O(T(2i)lg(n/i))
+   By substitution,
+   i < ceil(n/2)/2 ⇒ U_i(n) = floor(n/2) + ceil(n/2) + O(T(2i)lg(n/2i)) + T(2i)
+                            = n + O(T(2i)lg(n/i))
+   So U_i(n) = n + O(T(2i)lg(n/i)).
+
+c. i constant ⇒ U_i(n) = n + O(T(2i)lg(n/i)) = n + O(lg(n)).
+
+d. i = n/k ⇒ U_i(n) = n + O(T(2n/k)lg(n/(n/k))) = n + O(T(2n/k)lg(k)).
