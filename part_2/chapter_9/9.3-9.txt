@@ -1,0 +1,4 @@
+Let y_1, y_2, ..., y_n be the y-positions of the wells.
+Then we need to choose y to minimise Σ_{i=1}^n |y - y_i|.
+This is minimised by choosing y to be the median of the y_i, which can be
+calculated in linear time.

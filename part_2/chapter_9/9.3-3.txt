@@ -1,0 +1,3 @@
+If we always choose the median element as the pivot, then we never choose a "bad"
+pivot element. Since SELECT finds the minimum in linear time, it has no effect
+on the asymptotic runtime of quicksort, which remains O(nlog(n)).

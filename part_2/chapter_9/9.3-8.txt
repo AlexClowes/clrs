@@ -1,0 +1,11 @@
+Compare X[floor((n+1)/2)] and Y[floor((n+1)/2)], and suppose X[floor((n+1)/2]
+is smaller wlog.
+Then Y[i] > X[j] for i = floor((n+1)/2) + 1, floor((n+1)/2) + 2, ..., n and
+j = 1, 2, ..., floor((n+1)/2). So there are at least 2floor((n+1)/2) elements
+in X ∪ Y less than Y[i], and so Y[i] cannot be the median.
+Similarly, X[i] cannot be the median for i = 1, 2, ..., floor((n+1)/2) - 1.
+So now we just need to find the median of X[floor((n+1)/2) .. n] ∪ Y[1 .. floor((n+1)/2)].
+We can continue recursing like this until we have just a single element in X and
+Y, and we take the smaller of the two.
+
+The runtime is T(n) = T(n/2 + 1) + O(1) with T(2) = O(1) ⇒ T(n) = O(log(n)).

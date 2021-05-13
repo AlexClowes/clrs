@@ -1,0 +1,11 @@
+If we divide into groups of 7, the recurrence relation becomes
+T(n) ≤ T(ceil(n/7)) + T(5n/7 + 8) + O(n),
+and by the same substitution method as before this gives T(n) = O(n).
+
+If we divide into groups of 3, the recurrence in the worst case is
+T(n) = T(ceil(n/3)) + T(2n/3 + 4) + O(n)
+     ≥ T(n/3) + T(2n/3) + O(n)
+If T(m) ≥ cmlog(m) ∀ m < c, then
+T(n) ≥ c(n/3)log(n/3) + c(2n/3)log(2n/3) + O(n)
+     = cnlog(n) + O(n)
+So T(n) = O(nlog(n)) if we use groups of 3.

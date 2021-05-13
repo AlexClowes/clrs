@@ -1,0 +1,9 @@
+Let n be the number of elements in the array.
+If i = floor((n + 1) / 2), then the ith order statistic is the median, and the
+black-box algorithm finds this in linear time. Otherwise, we find the median
+element with the black-box algorithm and partition the elements using the median
+as the partition element. If i < floor((n + 1) / 2) we recurse, seeking the ith
+order statistic of the left partition. If i > floor((n + 1) / 2) we recurse,
+seeking the (i - floor((n + 1) / 2))th order statistic of the right partition.
+
+The runtime is thus T(n) ≤ T(n / 2) + O(n) ⇒ T(n) = O(n).

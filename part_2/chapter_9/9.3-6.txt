@@ -1,0 +1,7 @@
+For an array A[1 .. n] containing n elements, let A[i_1] < ... < A[i_{k-1}] be
+the kth quantiles.
+We can find A[i_{floor(k/2)}] in linear time, then partition the array using this
+as the partition element. Then half of the remaining kth quantiles lie in the left
+partition, and half of the remaining kth quantiles lie in the right partition, and
+we can recurse to find them.
+The runtime is T(n, k) ≤ 2T(n/2, k/2) + O(n) ⇒ T(n, k) = O(nlog(k)).

@@ -1,0 +1,14 @@
+Consider a graph with vertices n vertices labelled 1, 2, ..., n, and an algorithm
+making comparisons on elements of a set A[1 .. n] of n elements. When the
+algorithm makes a comparison of elements A[j] and A[k], add a directed edge from
+j to k if A[j] < A[k] and from k to j if A[k] < A[j].
+
+Now if a path j_1→ j_2→ ...→ j_k exists in the graph, then we know A[j_1] ≤ A[j_k]
+without needing to make any additional comparisons.
+
+To find the ith order statistic, the algorithm must find an element x in A such
+that there are exactly i - 1 elements in A less than x, and hence n - 1 elements
+greater than x. So there must be paths from i - 1 vertices to the vertex
+corresponding to x, and paths from this vertex to the remaining n - i vertices.
+So by finding the ith order statistic, we have found i - 1 elements less than x
+and n - i elements greater than x.
