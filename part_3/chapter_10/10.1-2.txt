@@ -1,0 +1,5 @@
+The first stack S1 consists of elements A[1 .. S1.top], where initially
+S1.top = 0.
+The second stack S2 consists of elements A[n - S2.top + 1 .. n], where initially
+S2.top = 0
+Neither stack overflows unless S1.top = n - S2.top ⇔ S1.top + S2.top = n.

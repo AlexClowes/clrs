@@ -1,0 +1,31 @@
+Represent a deque by an array D[1 .. n] containing n elements, and let D.left
+and D.right be attributes of D[1 .. n] with D.left = D.right = 1 initially.
+
+ENQUEUE-LEFT(D, x)
+    if D.left == 1
+        D.left = D.length
+    else
+        D.left = D.left - 1
+    D[D.left] = x
+
+DEQUEUE-LEFT(D)
+    x = D[D.left]
+    if D.left == D.length
+        D.left = 1
+    else
+        D.left = D.left + 1
+    return x
+
+ENQUEUE-RIGHT(D, x)
+    if D.right == D.length
+        D.right = 1
+    else
+        D.right = D.right + 1
+    D[D.right] = x
+
+DEQUEUE-RIGHT(D)
+    x = D[D.right]
+    if D.right == 1
+        D.right = D.length
+    else
+        D.right = D.right - 1

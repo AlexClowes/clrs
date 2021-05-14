@@ -1,0 +1,16 @@
+Suppose we have two stacks, S1 and S2. Then we can implement a queue Q as
+follows:
+
+ENQUEUE(Q, x)
+    PUSH(S1, x)
+
+DEQUEUE(Q)
+    if EMPTY(S2)
+        while not EMPTY(S1)
+            PUSH(S2, POP(S1))
+    if EMPTY(S2)
+        error "underflow"
+    return POP(S2)
+
+ENQUEUE takes Θ(1) time.
+DEQUEUE takes O(n) time in the worst case, but Θ(1) amortized time.

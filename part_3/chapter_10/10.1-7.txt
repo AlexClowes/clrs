@@ -1,0 +1,15 @@
+Suppose we have two queues, Q1 and Q2. Then we can implement a stack S as
+follows:
+
+PUSH(S, x)
+    while not EMPTY(Q1)
+        ENQUEUE(Q2, DEQUEUE(Q1))
+    ENQUEUE(Q1, x)
+    while not EMPTY(Q2)
+        ENQUEUE(Q1, DEQUEUE(Q2))
+
+POP(S, x)
+    return DEQUEUE(Q1)
+
+PUSH runs in Θ(n) time.
+POP runs in Θ(1) time.
