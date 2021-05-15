@@ -1,0 +1,21 @@
+Assume that the list L has a head attribute, which is just a pointer to some
+arbitrary element in the list.
+
+INSERT(L, x)
+    x.next = L.head.next
+    L.head.next = x
+
+DELETE(L, x)
+    prev = x
+    while prev.next ≠ x
+        prev = prev.next
+    prev.next = x.next
+
+SEARCH(L, k)
+    x = L.head
+    do
+        if x.key == k
+            return x
+        x = x.next
+    while x ≠ L.head
+    return NIL

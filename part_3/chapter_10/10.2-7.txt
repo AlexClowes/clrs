@@ -1,0 +1,9 @@
+REVERSE(L)
+    prev = nil
+    current = L.head
+    while current ≠ nil
+        next = current.next
+        current.next = prev
+        prev = current
+        current = next
+    L.head = prev

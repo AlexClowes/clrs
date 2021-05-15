@@ -1,0 +1,31 @@
+SEARCH(L, k)
+    prev = 0
+    x = L.head
+    while x ≠ 0 and x.key ≠ k
+        next = x.np XOR prev
+        prev = x
+        x = next
+    return x
+
+INSERT(L, x)
+    x.np = L.head
+    L.head.np = L.head.np XOR x
+    L.head = x
+
+DELETE(L, x)
+    prev = 0
+    current = L.head
+    while current ≠ x
+        next = current.np XOR prev
+        prev = current
+        current = next
+    next = current.np XOR prev
+    
+    prev.np = prev.np XOR x XOR next
+    next.np = next.np XOR x XOR prev
+        
+Assume that we have a pointer to the tail of the list.
+REVERSE(L, x)
+    temp = L.head
+    L.head = L.tail
+    L.tail = L.head

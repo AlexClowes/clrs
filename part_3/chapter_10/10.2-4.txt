@@ -1,0 +1,6 @@
+LIST-SEARCH'(L, k)
+    x = L.nil.next
+    L.nil.key = k
+    while x.key ≠ k
+        x = x.next
+    return x

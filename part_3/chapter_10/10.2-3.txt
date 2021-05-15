@@ -1,0 +1,10 @@
+We need to maintain pointers to the head and tail of the linked list.
+
+ENQUEUE(L, x)
+    L.tail.next = x
+    L.tail = L.tail.next
+
+DEQUEUE(L, x)
+    x = L.head
+    DELETE(L, L.head)
+    return x

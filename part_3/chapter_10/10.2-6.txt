@@ -1,0 +1,8 @@
+Assume that S1 and S2 are both circular doubly-linked lists with sentinels. A
+call to UNION(S1, S2) sets S1 = S1 ∪ S2.
+
+UNION(S1, S2)
+    S1.nil.prev.next = S2.nil.next
+    S2.nil.next.prev = S1.nil.prev
+    S2.nil.prev.next = S1.nil
+    S1.nil.prev = S2.nil.prev

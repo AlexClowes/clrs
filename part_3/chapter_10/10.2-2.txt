@@ -1,0 +1,7 @@
+PUSH(L, x)
+    INSERT(L, x)
+
+POP(L)
+    x = L.head
+    DELETE(L, L.head)
+    return x
