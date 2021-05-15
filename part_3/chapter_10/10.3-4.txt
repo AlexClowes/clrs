@@ -1,0 +1,19 @@
+Let free be an integer, recording the number of elements that have been
+allocated. Let MAX-SPACE be the maximum number of objects that can be stored at
+once.
+
+ALLOCATE-OBJECT()
+    if free == MAX-SPACE
+        error "out of space"
+    else
+        free = free + 1
+        return free
+
+FREE-OBJECT(x)
+    free = free - 1
+    while x ≠ NIL
+        next = A[x + 1]
+        A[x] = A[next]
+        A[x + 1] = A[next + 1]
+        A[x + 2] = A[next + 2]
+        x = next

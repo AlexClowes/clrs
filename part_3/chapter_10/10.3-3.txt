@@ -1,0 +1,4 @@
+free is a singly linked list, so we don't need the prev attributes to be set to
+any particular value in FREE-OBJECT. The caller of ALLOCATE-OBJECT is responsible
+for setting the value of prev, and no guarantees are made about the value when
+it is first allocated.

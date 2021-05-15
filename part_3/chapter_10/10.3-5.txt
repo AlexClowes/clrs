@@ -1,0 +1,26 @@
+We need to iterate through the elements of L. Whenever we find an element of L
+that does not occupy an array position in {1, 2, ..., n}, we copy it into an
+empty position that is in {1, 2, ..., n}, and we free the original location.
+
+We iterate through the elements of L. We swap the ith element of L with the
+element stored in A[i], updating all pointers needed to maintain the linked
+lists.
+
+SWAP(x, y)
+    exchange prev[next[x]] with prev[next[y]] and next[prev[x]] with next[prev[y]]
+    exchange next[x] with next[y]
+    exchange key[x] with key[y]
+    exchange prev[x] with prev[y]
+    
+
+COMPACTIFY-LIST(L, F)
+    f_head = F.head
+    x = L.head
+    i = 1
+    L.head = 1
+    while x ≠ NIL
+        if i == F.head
+            F.head = x
+        SWAP(x, i)
+        x = next[i]
+        i = i + 1

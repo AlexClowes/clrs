@@ -1,0 +1,11 @@
+ALLOCATE-OBJECT()
+    if free == NIL
+        error "out of space"
+    else
+        x = free
+        free = A[free + 1]
+        return x
+
+FREE-OBJECT(x)
+    A[x + 1] = free
+    free = x
