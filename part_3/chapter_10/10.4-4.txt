@@ -1,0 +1,21 @@
+PRINT-TREE(root)
+    prev = NIL
+    current = root
+    while current ≠ NIL
+        temp = current
+        if prev == current.p
+            PRINT(current.key)
+            if current.left ≠ NIL
+                current = current.left
+            else if current.right ≠ NIL
+                current = current.right
+            else
+                current = current.p
+        else if prev == current.left
+            if current.right ≠ NIL
+                current = current.right
+            else
+                current = current.p
+        else
+            current = current.p
+        prev = temp

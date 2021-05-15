@@ -1,0 +1,7 @@
+PRINT-TREE(root)
+    if root ≠ NIL
+        PRINT(root.key)
+        PRINT-TREE(root.left)
+        PRINT-TREE(root.right)
+
+To print a tree T, call PRINT-TREE(T.root).

@@ -1,0 +1,9 @@
+PRINT-TREE(T)
+    let S be an empty stack
+    PUSH(S, T.root)
+    while not STACK-EMPTY(S)
+        node = POP(S)
+        if node ≠ NIL
+            PRINT(node.key)
+            PUSH(S, node.left)
+            PUSH(S, node.right)

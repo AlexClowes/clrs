@@ -1,0 +1,7 @@
+Each node x will have attributes x.children, x.sibling_or_parent, x.last_child.
+x.children holds a pointer to the left-most child of x, or NIL if x has no
+children.
+x.sibling_or_parent holds a pointer to the sibling of x immediately to its right,
+or if x is the right-most sibling, it holds a pointer to the parent of x.
+x.last_child is a boolean, which is set to true iff x is the right-most sibling,
+i.e. if x.sibiling_or_parent holds a pointer to the parent of x.
