@@ -1,0 +1,39 @@
+a. COMPACT-LIST-SEARCH'(L, n, k, t) attempts to skip ahead to a randomly chosen
+   position j times. If it does not find the key after t skips, it reverts to a
+   linear search of the remaining elements. So if an element with the correct
+   key is present it returns that element, otherwise it returns NIL. So it
+   returns the same value as COMPACT-LIST-SEARCH(L, n, k).
+   On each iteration of the while loop in COMPACT-LIST-SEARCH, we attempt to
+   skip ahead, then move to the next element in the list. So it takes at least t
+   random skips to find the correct value in the list. So COMPACT-LIST-SEARCH'
+   performs at least t iterations of the for loop, and some (non-negative)
+   number of iterations of the while loop.
+
+b. First we make t iterations through the for loop, which takes O(t) time. Then
+   we are distance X_t from the correct element, and taking X_t steps through
+   the list takes O(E[X_t]) expected time. So the total expected time is
+   O(t + E[X_t]).
+
+c. Suppose the element with key k is the mth smallest element in the list. Then
+   the probability that X_t ≥ r for 0 ≤ r < m is the probability that each of
+   the randomly chosen elements j are not one of the kth, (k-1)th, ..., (k-r+1)th
+   smallest elements. The js are indpendent uniform random variables over {1, .., n}.
+   ∴ P(X_t ≥ r) = (1 - r/n)^t
+   ⇒ E[X_t] = Σ_{r=1}^m P(X_t ≥ r) ≤ Σ_{r=1}^n P(X_t ≥ r) = Σ_{r=1}^n (1 - r/n)^t.
+
+d. Σ_{r=0}^n(1 - r/n)^t ≤ ∫_0^n x^t dx = n^(t + 1) / (t + 1).
+
+e. E[X_t] ≤ Σ_{r=1}^n (1 - r/n)^t
+          = n^-t Σ_{r=0}^{n-1} r^t
+          ≤ n / (t + 1).
+
+f. COMPACT-LIST-SEARCH'(L, n, k, t) runs in
+   O(t + E[X_t]) = O(t + n / (t + 1)) = O(t + n / t) time.
+
+g. COMPACT-LIST-SEARCH has asymptotic runtime at least as good as
+   COMPACT-LIST-SEARCH'. If we choose t = √n, then COMPACT-LIST-SEARCH' has
+   O(t + n / t) = O(√n) runtime, and hence COMPACT-LIST-SEARCH has O(√n) runtime.
+
+h. If keys are not distinct, then we may randomly choose j that is further along
+   in the list than i, and where key[i] = key[j] < k. Then we would not take this
+   skip. So the above analysis does not work and the bound on E[X_t] may not hold.

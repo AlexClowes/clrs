@@ -1,0 +1,24 @@
+a. For MAKE-HEAP, just create a new list L, set L.head = NIL and return L. This
+   takes O(1) time.
+   For INSERT, we search for the correct location to insert the new element so
+   as to maintain a sorted list, and then insert the element at that position.
+   This takes O(n) time.
+   For MINIMUM, just return L.head, taking O(1) time.
+   For EXTRACT-MIN, just return the first element of the list and set
+   L.head = L.head.next to remove it from the list. The list is sorted, so the
+   min-heap invariant is maintained. This takes O(1) time.
+   For UNION, merge the two lists to obtain a single sorted list. This takes
+   O(n) time, where n is the number of elements in the final list.
+
+b. MAKE-HEAP is the same as part a.
+   For INSERT, we just implement HEAP-INSERT as we would for a heap using an
+   array. The only difference is that it takes linear time obtain a parent or
+   child node, so the runtime is O(n).
+   MINIMUM is the same as part a.
+   For EXTRACT-MINIMUM, we retrieve the value of L.head, swap the L.head and
+   L.tail nodes, call MIN-HEAPIFY on the resulting linked list, then return the
+   original value of L.head. This takes O(n) time.
+   For UNION, iterate through nodes of B, inserting nodes from A as we go and
+   maintaining the heap invariant. Return B at the end. This takes O(n) time.
+
+c. Exactly the same as b.

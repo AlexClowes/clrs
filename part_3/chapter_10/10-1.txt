@@ -1,0 +1,10 @@
+                   unsorted,  sorted,  unsorted,  sorted,
+                    singly    singly    doubly    doubly
+                    linked    linked    linked    linked
+SEARCH(L, k)         O(n)      O(n)      O(n)      O(n)
+INSERT(L, x)         O(1)      O(1)      O(1)      O(1)
+DELETE(L, x)         O(n)      O(n)      O(1)      O(1)
+SUCCESSOR(L, x)      O(n)      O(1)      O(n)      O(1)
+PREDECESSOR(L, x)    O(n)      O(n)      O(n)      O(1)
+MINIMUM(L)           O(n)      O(1)      O(n)      O(1)
+MAXIMUM(L)           O(n)      O(n)      O(n)      O(n)
